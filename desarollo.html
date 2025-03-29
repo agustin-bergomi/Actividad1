@@ -2,80 +2,70 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Diseño y Desarrollo Web</title>
   <link rel="stylesheet" href="estilos.css" />
 </head>
 <body class="modo-claro">
 
-  <header>
-    <h1>Diseño y Desarrollo Web</h1>
-    <p>Resumen de la materia, actividades y recursos útiles</p>
-    <div class="modo-toggle">
-      <button onclick="cambiarModo('claro')">☀️ Claro</button>
-      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
-    </div>
-  </header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="desarollo.html">Desarrollo</a>
-    <a href="gimnasio/gimnasio.html">Gimnasio</a>
-  </nav>
-
-  <div class="contenido">
-    <section>
-      <h2>Bibliografía</h2>
-      <p>
-        <strong>Diseño de páginas Web.</strong> Autor: Jack Davis. <br>
-        <strong>Diseño web con CSS.</strong> Autor: Ralph G. Schulz. <br>
-
-        <br>
-        <strong>Apuntes de clase y materiales complementarios:</strong>
-      </p>
-      <ul>
-        <li><a href="https://www.w3.org/" target="_blank">https://www.w3.org/</a></li>
-        <li><a href="https://www.pdf-manual.es/programacion-web/html/70-creacion-de-paginas-web-en-html.html" target="_blank">https://www.pdf-manual.es/programacion-web/html/70-creacion-de-paginas-web-en-html.html</a></li>
-        <li><a href="https://html-now.github.io/" target="_blank">https://html-now.github.io/</a></li>
-        <li><a href="https://www.w3schools.com/" target="_blank">https://www.w3schools.com/</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Fechas de Exámenes</h2>
-      <ul>
-        <li>Parcial 1: 21/04/2025</li>
-        <li>Parcial 2: 09/06/2025</li>
-        <li>Final: 30/06/2025</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Actividades UVAs</h2>
-
-      <h3>UVA1</h3>
-      <ul>
-        <li><a href="index.html">Actividad 1 (Acerca de mi)</a></li>
-        <li><a href="desarollo.html">Actividad 2 (Esta pagina - Info de la materia Diseño Web)</a></li>
-        <li><a href="actividad3/index.html">Actividad 3 (Tabla con materias del cuatrimestre)</a></li>
-      </ul>
-    </section>
+<header>
+  <h1>Diseño y Desarrollo Web</h1>
+  <p>Resumen de la materia, actividades y recursos útiles</p>
+  <div class="modo-toggle">
+    <button onclick="cambiarModo('claro')">☀️ Claro</button>
+    <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
   </div>
+</header>
 
-  <footer style="background-color: #444; color: white; text-align: center; padding: 1em;">
-    <p>Derechos reservados</p>
-  </footer>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="desarrollo.html">Desarrollo</a>
+  <a href="gimnasio/gimnasio.html">Gimnasio</a>
+</nav>
 
-  <script>
+<div class="contenido">
+  <section>
+    <h2>Bibliografía</h2>
+    <p><strong>Diseño de páginas Web</strong> - Autor: Jack Davis</p>
+    <p><strong>Diseño web con CSS</strong> - Autor: Ralph G. Schulz</p>
+    <p><strong>Apuntes de clase y materiales complementarios:</strong></p>
+    <ul>
+      <li><a href="https://www.w3.org/" target="_blank">https://www.w3.org/</a></li>
+      <li><a href="https://www.pdf-manual.es/programacion-web/html/70-creacion-de-paginas-web-en-html.html" target="_blank">https://www.pdf-manual.es/programacion-web/html/70-creacion-de-paginas-web-en-html.html</a></li>
+      <li><a href="https://html-now.github.io/" target="_blank">https://html-now.github.io/</a></li>
+      <li><a href="https://www.w3schools.com/" target="_blank">https://www.w3schools.com/</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Fechas de Exámenes</h2>
+    <ul>
+      <li>Parcial 1: 21/04/2025</li>
+      <li>Parcial 2: 09/06/2025</li>
+      <li>Final: 30/06/2025</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Actividades UVAs</h2>
+    <h3>UVA1</h3>
+    <ul>
+      <li><a href="index.html">Actividad 1 (Acerca de mí)</a></li>
+      <li><a href="desarrollo.html">Actividad 2 (Esta página)</a></li>
+      <li><a href="actividad3/index.html">Actividad 3 (Tabla de materias)</a></li>
+    </ul>
+  </section>
+</div>
+
+<footer style="background-color: #444; color: white; text-align: center; padding: 1em;">
+  <p>Derechos reservados</p>
+</footer>
+
+<script>
     function cambiarModo(modo) {
       const body = document.body;
-      if (modo === 'oscuro') {
-        body.classList.remove('modo-claro');
-        body.classList.add('modo-oscuro');
-      } else {
-        body.classList.remove('modo-oscuro');
-        body.classList.add('modo-claro');
-      }
+      body.classList.toggle('modo-oscuro', modo === 'oscuro');
+      body.classList.toggle('modo-claro', modo === 'claro');
     }
   </script>
 

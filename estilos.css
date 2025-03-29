@@ -1,0 +1,26 @@
+.contenido section {
+  margin-bottom: 2em;
+}
+
+.contenido h2, .contenido h3 {
+  margin-top: 1.5em;
+  color: #007bff;
+}
+
+.contenido ul {
+  padding-left: 1.5em;
+  margin-top: 0.5em;
+}
+
+.contenido li {
+  margin-bottom: 0.5em;
+}
+
+.contenido a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contenido a:hover {
+  text-decoration: underline;
+}
