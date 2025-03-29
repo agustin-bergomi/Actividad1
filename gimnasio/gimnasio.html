@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gimnasio PowerFit</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body class="modo-claro">
+
+  <header>
+    <h1>Bienvenido a PowerFit 💪</h1>
+    <p>¡Transformá tu cuerpo, transformá tu vida!</p>
+
+    <div class="modo-toggle">
+      <button onclick="cambiarModo('claro')">☀️ Claro</button>
+      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="gimnasio.html">Home</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="galeria.html">Galería</a>
+  </nav>
+  
+
+
+  <div class="contenido">
+
+    <h2>Formulario de Registro</h2>
+    <form>
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="plan">Tipo de plan:</label>
+      <select id="plan" name="plan" required>
+        <option value="">Seleccioná un plan</option>
+        <option value="mensual">Mensual</option>
+        <option value="trimestral">Trimestral</option>
+        <option value="anual">Anual</option>
+      </select>
+
+      <label for="horario">Horario preferido:</label>
+      <select id="horario" name="horario" required>
+        <option value="">Seleccioná un horario</option>
+        <option value="mañana">Mañana (6:00 - 12:00)</option>
+        <option value="tarde">Tarde (12:00 - 18:00)</option>
+        <option value="noche">Noche (18:00 - 23:00)</option>
+      </select>
+
+      <button type="submit" class="enviar">Registrarse</button>
+    </form>
+  </div>
+
+  <script>
+    function cambiarModo(modo) {
+      const body = document.body;
+      if (modo === 'oscuro') {
+        body.classList.remove('modo-claro');
+        body.classList.add('modo-oscuro');
+      } else {
+        body.classList.remove('modo-oscuro');
+        body.classList.add('modo-claro');
+      }
+    }
+  </script>
+
+</body>
+</html>

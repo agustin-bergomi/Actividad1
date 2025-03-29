@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nosotros - PowerFit</title>
+  <link rel="stylesheet" href="estilos.css" />
+
+</head>
+<body class="modo-claro">
+
+  <header>
+    <h1>Nosotros</h1>
+    <p>¿Quiénes somos y por qué existimos?</p>
+    <div class="modo-toggle">
+      <button onclick="cambiarModo('claro')">☀️ Claro</button>
+      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="gimnasio.html">Home</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="galeria.html">Galería</a>
+  </nav>
+
+  <div class="contenido">
+    <h2>Nuestra misión</h2>
+    <p>En PowerFit, creemos que el entrenamiento físico es una herramienta poderosa para transformar no solo el cuerpo, sino también la mente y el espíritu.</p>
+
+    <h2>Historia</h2>
+    <p>Nacimos en 2018 con el objetivo de ofrecer un espacio moderno, amigable y profesional para que todas las personas —sin importar su nivel— puedan entrenar y superarse día a día.</p>
+
+    <h2>Equipo</h2>
+    <p>Contamos con entrenadores certificados, clases especializadas, atención personalizada y un ambiente donde cada miembro es parte de la familia PowerFit.</p>
+  </div>
+
+  <script>
+    function cambiarModo(modo) {
+      const body = document.body;
+      if (modo === 'oscuro') {
+        body.classList.remove('modo-claro');
+        body.classList.add('modo-oscuro');
+      } else {
+        body.classList.remove('modo-oscuro');
+        body.classList.add('modo-claro');
+      }
+    }
+  </script>
+
+</body>
+</html>
