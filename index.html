@@ -1,44 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre mi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agustin Bergomi - Test Automation Engineer</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
-<body>
-<header>
-    <ul>
-        <li><a href="index.html">Sobre mi</a></li>
-        <li><a href="desarollo.html">Diseño y Desarrollo Web</a></li>
-        <li><a href="gimnasio/gimnasio.html">Gimnasio</a></li>
-    </ul>
-    <h1>Acerca de mi</h1>
-</header>
+<body class="modo-claro">
 
-<main style="font-size: 20px;">
-    <img src="img/foto_perfil.jpeg" alt="foto de perfil" width="200">
-    <p>Mi nombre es Agustin Bergomi. Actualmente me dedico al control de calidad de software, especificamente a crear test automatizados para<br>
-        mobile tanto para Android como para iOS en una importante empresa multinacional.<br>
-        Estoy trabajando en esa empresa desde hace mas de 4 años y antes de eso trabaje varios años como freelance software developer ofreciendo<br>
-        servicios de web scraping principalmente.<br>
-        <br><br>
-        Trabajo en software hace mas de 9 años y siempre me gusto la programacion. En mi tiempo libre me gusta andar en bici.<br>
-        Mis intereses son la programacion y todo lo relacionado con IT como Dev Ops, Inteligencia Artificial y desarrollo mobile.<br>
-        Tengo conocimientos en lenguajes como Java, Kotlin, Typescript asi como tambien conocimientos de CI/CD, Agile, Clean Code, Manual<br>
-        Testing, Automation Testing, Mobile Development, API testing, entre otros conocimientos relacionados.<br>
-        <br><br>
-        Estoy estudiando Lic. en gestion de la tecnologia de la informacion en UADE. Elegi la UADE por la gran trayectoria de la universidad<br>
-        asi como tambien por el prestigio de la misma.<br>
-        Ademas, es una universidad sumamente valorada tanto en Argentina como en muchos otros paises.<br>
-        Vivo en Buenos Aires, Argentina.<br>
-    </p>
-    <p>Soy alumno de <a href="https://www.uade.edu.ar/" target="_blank">UADE</a>
-    </p>
-</main>
+  <header>
+    <h1>Acerca de mí</h1>
+    <div class="modo-toggle">
+      <button onclick="cambiarModo('claro')">☀️ Claro</button>
+      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
+    </div>
+  </header>
 
-<footer style="background-color: blueviolet;">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="desarollo.html">Desarrollo</a>
+    <a href="gimnasio/gimnasio.html">Gimnasio</a>
+  </nav>
+
+  <div class="contenido">
+    <img src="img/foto_perfil.jpeg" alt="Foto de perfil" width="200"
+         style="float: left; margin-right: 20px; margin-bottom: 10px; padding: 5px; border: 2px solid #ccc; border-radius: 10px;" />
+
+    <p>
+      Mi nombre es Agustin Bergomi. Actualmente me dedico al control de calidad de software, específicamente a crear tests automatizados para
+      mobile tanto para Android como para iOS en una importante empresa multinacional.
+      Estoy trabajando en esa empresa desde hace más de 4 años y antes de eso trabajé varios años como freelance software developer ofreciendo
+      servicios de web scraping principalmente.
+    </p>
+
+    <p>
+      Trabajo en software hace más de 9 años y siempre me gustó la programación. En mi tiempo libre me gusta andar en bici.
+      Mis intereses son la programación y todo lo relacionado con IT como DevOps, Inteligencia Artificial y desarrollo mobile.
+      Tengo conocimientos en lenguajes como Java, Kotlin, TypeScript, así como también conocimientos de CI/CD, Agile, Clean Code, Manual
+      Testing, Automation Testing, Mobile Development, API testing, entre otros conocimientos relacionados.
+    </p>
+
+    <p>
+      Estoy estudiando Licenciatura en Gestión de la Tecnología de la Información en UADE. Elegí la UADE por la gran trayectoria de la universidad
+      así como también por el prestigio de la misma.
+      Además, es una universidad sumamente valorada tanto en Argentina como en muchos otros países.
+      Vivo en Buenos Aires, Argentina.
+    </p>
+
+    <p>
+      Soy alumno de <a href="https://www.uade.edu.ar/" target="_blank">UADE</a>
+    </p>
+  </div>
+
+  <footer style="background-color: #444; color: white; text-align: center; padding: 1em;">
     <p>Derechos reservados</p>
-</footer>
+  </footer>
+
+  <script>
+    function cambiarModo(modo) {
+      const body = document.body;
+      if (modo === 'oscuro') {
+        body.classList.remove('modo-claro');
+        body.classList.add('modo-oscuro');
+      } else {
+        body.classList.remove('modo-oscuro');
+        body.classList.add('modo-claro');
+      }
+    }
+  </script>
 
 </body>
 </html>

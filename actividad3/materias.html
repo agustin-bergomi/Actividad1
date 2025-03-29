@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Materias 2025</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materias 2025</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
-<body>
-<header>
+<body class="modo-claro">
+
+  <header>
+    <h1>Materias 2025 📘</h1>
+    <p>Primer cuatrimestre - UADE</p>
+    <div class="modo-toggle">
+      <button onclick="cambiarModo('claro')">☀️ Claro</button>
+      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="avisos.html">Avisos</a>
+    <a href="sobre_mi.html">Sobre mí</a>
+    <a href="materias.html">Materias</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <div class="contenido">
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="avisos.html">Avisos</a></li>
-        <li><a href="sobre_mi.html">Sobre mí</a></li>
-        <li><a href="materias.html">Materias 2025</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="https://virtualbsp.uade.edu.ar/d2l/lms/dropbox/user/folder_submit_files.d2l?db=47031&grpid=0&isprv=False&bp=0&ou=43615.html" target="_blank">Diseño y Desarrollo Web</a></li>
+      <li>Sistemas de Información</li>
+      <li>Arquitectura de los Computadores</li>
+      <li>Redes</li>
+      <li>Intro a la Algoritmia</li>
     </ul>
-    <h1>Materias 2025</h1>
-</header>
-<section>
-    <ul>
-        <li><a href="https://virtualbsp.uade.edu.ar/d2l/lms/dropbox/user/folder_submit_files.d2l?db=47031&grpid=0&isprv=False&bp=0&ou=43615.html">Diseño y Desarrollo Web</a></li>
-        <li>Sistemas de informacion</li>
-        <li>Arquitectura de los computadoresw</li>
-        <li>Redes</li>
-        <li>Intro a la algoritmia</li>
-        <!-- Agregá más materias si querés -->
-    </ul>
-</section>
+  </div>
+
+  <footer style="background-color: #444; color: white; text-align: center; padding: 1em;">
+    <p>Derechos reservados</p>
+  </footer>
+
+  <script>
+    function cambiarModo(modo) {
+      const body = document.body;
+      body.classList.toggle('modo-oscuro', modo === 'oscuro');
+      body.classList.toggle('modo-claro', modo === 'claro');
+    }
+  </script>
+
 </body>
 </html>

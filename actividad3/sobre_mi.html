@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Sobre Mí</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre mí - Agustin Bergomi</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
-<body>
-<header>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="avisos.html">Avisos</a></li>
-        <li><a href="sobre_mi.html">Sobre mí</a></li>
-        <li><a href="materias.html">Materias 2025</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-    <h1>Sobre Mí</h1>
-</header>
-<section>
-    <img src="img/foto_perfil.jpeg" alt="Mi foto de perfil" width="200">
+<body class="modo-claro">
+
+  <header>
+    <h1>Sobre mí 👨‍💻</h1>
+    <p>Conocé mi experiencia en tecnología y desarrollo</p>
+    <div class="modo-toggle">
+      <button onclick="cambiarModo('claro')">☀️ Claro</button>
+      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="avisos.html">Avisos</a>
+    <a href="sobre_mi.html">Sobre mí</a>
+    <a href="materias.html">Materias</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <div class="contenido">
+    <img src="img/foto_perfil.jpeg" alt="Foto de perfil" width="200" style="float: left; margin-right: 20px; margin-bottom: 10px; padding: 5px; border: 2px solid #ccc; border-radius: 10px;" />
+
     <p><strong>Nombre completo:</strong> Agustin Bergomi</p>
-    <p><strong>Carrera:</strong> Lic en gestion de la tecnologia informatica</p>
     <p><strong>Edad:</strong> 27 años</p>
-    <p><strong>Intereses:</strong> Programación, diseño, música</p>
-</section>
+    <p><strong>Carrera:</strong> Licenciatura en Gestión de la Tecnología de la Información</p>
+    <p><strong>Experiencia:</strong> 
+    
+        <p>Cuento con más de 9 años de experiencia trabajando en el ámbito del software, desempeñándome actualmente como Test Automation Engineer, donde me especializo en la creación de pruebas automatizadas para plataformas Android e iOS. Antes de esto, trabajé como freelance en desarrollo y scraping web, lo que fortaleció mi versatilidad técnica.</p>
+        <p>En mi rol actual, realizo pruebas manuales en diversos emuladores para asegurar la calidad del producto, elaboro reportes de bugs con evidencia detallada siguiendo las metodologías y formatos definidos por el cliente, y priorizo casos de prueba según los objetivos del proyecto. Asimismo, diseño y desarrollo tests automatizados, resuelvo problemas en estas pruebas y ejecuto tanto pruebas manuales como automatizadas para distintos escenarios, incluyendo Smoke, Regression, Pre-Integration y E2E, entre otros. Mi experiencia también incluye una amplia gama de tareas relacionadas con QA, QC y TAE.</p>
+        <p>Además, me asigno tickets de manera autónoma, considerando las prioridades del cliente y la capacidad del equipo para optimizar el flujo de trabajo. Analizo reportes de Allure y datos de Jenkins sobre la ejecución de tests, identificando casos que requieren atención urgente para garantizar la estabilidad del software. Gestiono mi tiempo de forma eficiente, ofreciendo soporte y asistencia al equipo de Manual Testing en tareas que puedan resultar más complejas para ellos.</p>
+        <p>Evalúo la viabilidad de automatizar tests mediante el uso de diferentes frameworks o técnicas, adaptándome a las necesidades específicas de cada proyecto. Finalmente, me mantengo en constante capacitación y desarrollo profesional, tanto a través de formación formal en universidad y cursos, como de manera autodidacta, investigando y consultando recursos relacionadas con el ámbito del testing y la automatización.</p>
+    
+    </p>
+    <p><strong>Intereses:</strong> Programación, DevOps, IA, mobile development, diseño, música, ciclismo.</p>
+    <p>Vivo en Buenos Aires, Argentina. </p>
+    <p>Estudio en <a href="https://www.uade.edu.ar/" target="_blank">UADE</a>.</p>
+  </div>
+
+  <footer style="background-color: #444; color: white; text-align: center; padding: 1em;">
+    <p>Derechos reservados</p>
+  </footer>
+
+  <script>
+    function cambiarModo(modo) {
+      const body = document.body;
+      body.classList.toggle('modo-oscuro', modo === 'oscuro');
+      body.classList.toggle('modo-claro', modo === 'claro');
+    }
+  </script>
+
 </body>
 </html>

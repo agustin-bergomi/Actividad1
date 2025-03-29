@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Contacto</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
-<body>
-<header>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="avisos.html">Avisos</a></li>
-        <li><a href="sobre_mi.html">Sobre mí</a></li>
-        <li><a href="materias.html">Materias 2025</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-    <h1>Contacto</h1>
-</header>
-<section>
+<body class="modo-claro">
+
+  <header>
+    <h1>Contacto 📬</h1>
+    <p>¿Querés comunicarte? Dejá tu mensaje acá abajo</p>
+    <div class="modo-toggle">
+      <button onclick="cambiarModo('claro')">☀️ Claro</button>
+      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="avisos.html">Avisos</a>
+    <a href="sobre_mi.html">Sobre mí</a>
+    <a href="materias.html">Materias</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <div class="contenido">
     <form>
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" id="nombre" name="nombre"><br><br>
+      <label for="nombre">Nombre:</label><br />
+      <input type="text" id="nombre" name="nombre" required /><br /><br />
 
-        <label for="email">Correo electrónico:</label><br>
-        <input type="email" id="email" name="email"><br><br>
+      <label for="email">Correo electrónico:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
 
-        <label for="mensaje">Mensaje:</label><br>
-        <textarea id="mensaje" name="mensaje" rows="5" cols="40"></textarea><br><br>
+      <label for="mensaje">Mensaje:</label><br />
+      <textarea id="mensaje" name="mensaje" rows="5" cols="40" required></textarea><br /><br />
 
-        <input type="submit" value="Enviar">
+      <button type="submit" class="enviar">Enviar</button>
     </form>
-</section>
+  </div>
+
+  <footer style="background-color: #444; color: white; text-align: center; padding: 1em;">
+    <p>Derechos reservados</p>
+  </footer>
+
+  <script>
+    function cambiarModo(modo) {
+      const body = document.body;
+      body.classList.toggle('modo-oscuro', modo === 'oscuro');
+      body.classList.toggle('modo-claro', modo === 'claro');
+    }
+  </script>
+
 </body>
 </html>

@@ -1,41 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Avisos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avisos</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
-<body>
-<header>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="avisos.html">Avisos</a></li>
-        <li><a href="sobre_mi.html">Sobre mí</a></li>
-        <li><a href="materias.html">Materias 2025</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-    <h1>Avisos y Tareas</h1>
-</header>
-<section>
+<body class="modo-claro">
+
+  <header>
+    <h1>Avisos y Tareas 📝</h1>
+    <p>Organización por materia</p>
+    <div class="modo-toggle">
+      <button onclick="cambiarModo('claro')">☀️ Claro</button>
+      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="avisos.html">Avisos</a>
+    <a href="sobre_mi.html">Sobre mí</a>
+    <a href="materias.html">Materias</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <div class="contenido">
     <h2>Diseño y Desarrollo Web</h2>
+    <ul>
+      <li>Leer bibliografía UVA1</li>
+      <li>Entregar Actividad 1, 2 y 3</li>
+      <li>Entregar actividad de Gimnasio</li>
+      <li>Hacer actividad de Star Wars</li>
+    </ul>
+
+    <h2>Sistemas de informacion</h2>
     <ul>
         <li>Leer bibliografía UVA1</li>
         <li>Entregar Actividad 1, 2 y 3</li>
-    </ul>
+        <li>Entregar punto 1 del TP</li>
+        <li>Hacer cuestionarios</li>
+      </ul>
 
-    <h2>Arq computadores</h2>
+    <h2>Arquitectura de los Computadores</h2>
     <ul>
-        <li>Entregar respuestas historia de la informatica</li>
+      <li>Entregar respuestas historia de la informática</li>
+      <li>Entregar ejercicio de transformar a binario y decimal</li>
     </ul>
 
     <h2>Redes</h2>
     <ul>
-        <li>Leer tipologia OSI</li>
+      <li>Leer tipología OSI</li>
+      <li>Entregar actividad de transformar a binario, decimal y hexadecimal</li>
+      <li>Estudiar switch, bridge, hub, colisiones, etc</li>
     </ul>
 
-    <h2>Intro a la algoritmia</h2>
+    <h2>Intro a la Algoritmia</h2>
     <ul>
-        <li>Entregar ejercicios python</li>
+      <li>Entregar ejercicios Python</li>
+      <li>Hacer los 10 ejercicios de Python</li>
     </ul>
-</section>
+  </div>
+
+  <footer style="background-color: #444; color: white; text-align: center; padding: 1em;">
+    <p>Derechos reservados</p>
+  </footer>
+
+  <script>
+    function cambiarModo(modo) {
+      const body = document.body;
+      body.classList.toggle('modo-oscuro', modo === 'oscuro');
+      body.classList.toggle('modo-claro', modo === 'claro');
+    }
+  </script>
+
 </body>
 </html>
