@@ -1,0 +1,42 @@
+/* Imperio en rojo */
+.imperio {
+    background-color: red;
+  }
+  
+  /* Rebeldes en azul */
+  .rebeldes {
+    background-color: blue;
+    color: white;
+  }
+  
+  /* Aumentar tamaño para Darth Vader */
+  #darthvader {
+    font-size: 1.4em;
+  }
+  
+  /* Italic para Luke */
+  #luke {
+    font-style: italic;
+  }
+  
+  /* Soldados con borde a rayas */
+  .soldado {
+    border: 2px dashed white;
+    padding: 5px;
+  }
+  
+  /* Espaciado de letras */
+  .letra {
+    letter-spacing: 2px;
+  }
+  
+  /* Apoyo centrado */
+  .apoyo {
+    text-align: center;
+  }
+  
+  /* Nombres de naves en mayúsculas */
+  .nave {
+    text-transform: uppercase;
+  }
+  
