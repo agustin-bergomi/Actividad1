@@ -1,0 +1,154 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantina Chichilo de Buenos Aires</title>
+    <meta name="keywords" content="cantina chichilo, restaurante argentina, cantina buenos aires, comida italiana, fusiles, tiramisu, caracoles, ranas, cordero patagonico">
+    <meta name="description" content="Cantina Chichilo, una tradición de 62 años en Buenos Aires ofreciendo auténtica comida italiana en La Paternal.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Cantina Chichilo</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero" id="home">
+            <h2>Bienvenidos a Cantina Chichilo</h2>
+            <p>Una tradición de 62 años en Buenos Aires, sirviendo auténtica comida italiana en La Paternal.</p>
+        </section>
+
+        <section class="menu-section" id="menu">
+            <h2>Nuestro Menú</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Lentejas a Caballo</h3>
+                    <p>Deliciosas lentejas servidas con huevo frito.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Pasta con Chichiri</h3>
+                    <p>Pasta casera con garbanzos al estilo italiano.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Mondongo a la Italiana</h3>
+                    <p>Guiso tradicional de mondongo con salsa de tomate.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Riñones al Vino Blanco</h3>
+                    <p>Riñones salteados en una suave salsa de vino blanco.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Calamarettis a la Escarpetta</h3>
+                    <p>Calamares tiernos en salsa para mojar pan.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Ranas a la Provenzal</h3>
+                    <p>Ranas frescas con ajo y perejil.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Caracoles a la Bordaleza</h3>
+                    <p>Caracoles en una rica salsa bordaleza.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Rabas a la Calabria</h3>
+                    <p>Calamares fritos al estilo calabrés.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Merluza al Ajillo</h3>
+                    <p>Merluza fresca con salsa de ajo.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Gambas al Ajillo</h3>
+                    <p>Camarones salteados con ajo y aceite de oliva.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Tiramisú Calabrés</h3>
+                    <p>Postre clásico italiano con un toque calabrés.</p>
+                </div>
+                <div class="menu-item">
+                    <h3>Quinotos Caseros al Rhum</h3>
+                    <p>Quinotos en almíbar con helado, infusionados con ron.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <h2>Galería</h2>
+            <div class="gallery-grid">
+                <img src="comida2.jpg" alt="Interior de Cantina Chichilo">
+                <img src="comida3.jpg" alt="Postre Chicholina">
+                <img src="comida4.jpg" alt="Ranas a la Provenzal">
+                <img src="comida5.jpg" alt="Caracoles a la Bordaleza">
+                <img src="comida6.jpg" alt="Picada Italiana">
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Contacto</h2>
+            <p>Camarones 1901, Esq. Terrero 2006, La Paternal, CABA, Argentina</p>
+            <p>Teléfonos: 011-4584-1263 / 1150200152</p>
+            <p>Email: <a href="mailto:chichilo3554@hotmail.com">chichilo3554@hotmail.com</a></p>
+            <p>Horario:</p>
+            <p>Jueves a Sábados: 20:30 - 23:30</p>
+            <p>Sábados y Domingos: 12:30 - 14:30</p>
+            <p><a href="http://fotos.ubbi.com/MisFotos/galeria.asp?idAlbum=34165" target="_blank">Visita nuestro álbum de fotos</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Cantina Chichilo de Buenos Aires - Desde 1956</p>
+        <p>Ganadora de los Premios Clarín y Martín Fierro 2005</p>
+        <p><a href="mailto:chichilo3554@hotmail.com">Contáctanos</a></p>
+    </footer>
+</body>
+</html>
