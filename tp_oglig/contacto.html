@@ -1,0 +1,56 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/styles.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Menu -->
+    <nav class="bg-blue-600 text-white p-4 fixed w-full top-0 shadow-md">
+        <ul class="flex space-x-6 justify-center">
+            <li><a href="index.html" class="hover:underline">Home</a></li>
+            <li><a href="avisos.html" class="hover:underline">Avisos</a></li>
+            <li><a href="sobremi.html" class="hover:underline">Sobre Mí</a></li>
+            <li><a href="materias2025.html" class="hover:underline">Materias 2025</a></li>
+            <li><a href="contacto.html" class="hover:underline font-semibold">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-20 p-6 bg-white rounded-lg shadow-lg">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-blue-800">Contacto</h1>
+            <p class="text-gray-600">Envíame un mensaje</p>
+        </header>
+        <section>
+            <!-- Contact Form -->
+            <div class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-medium mb-2">Nombre</label>
+                    <input type="text" id="name" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-medium mb-2">Correo Electrónico</label>
+                    <input type="email" id="email" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="subject" class="block text-gray-700 font-medium mb-2">Asunto</label>
+                    <input type="text" id="subject" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
+                    <textarea id="message" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" rows="5"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-full">Enviar</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white text-center p-4 mt-8">
+        <p>© 2025 Mi Sitio Académico. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
