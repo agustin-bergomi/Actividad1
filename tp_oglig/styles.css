@@ -1,21 +1,21 @@
-/* Custom styles for the academic website */
+/* Estilos para tp obligatorio */
 
-/* Ensure the body has padding to account for fixed navbar */
+/* padding para el body por el fixed navbar */
 body {
     padding-top: 80px;
 }
 
-/* Table hover effect */
+/* efecto de hover para la tabla */
 table tbody tr:hover {
     background-color: #e5f4ff;
 }
 
-/* Custom button styling */
+/* estilo custom boton */
 button, input[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-/* Responsive adjustments */
+/* ajustes para que sea mas responsive */
 @media (max-width: 640px) {
     nav ul {
         flex-direction: column;
