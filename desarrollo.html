@@ -6,7 +6,14 @@
   <title>Diseño y Desarrollo Web</title>
   <link rel="stylesheet" href="estilos.css" />
 </head>
+
 <body class="modo-claro">
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="desarrollo.html">Desarrollo</a>
+    <a href="gimnasio/gimnasio.html">Gimnasio</a>
+  </nav>
 
   <header>
     <h1>Diseño y Desarrollo Web 📘</h1>
@@ -17,43 +24,46 @@
     </div>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="desarrollo.html">Desarrollo</a>
-    <a href="gimnasio/gimnasio.html">Gimnasio</a>
-  </nav>
+  <main class="contenedor-desarrollo">
+    <section class="izquierda">
+      <div class="bloque">
+        <h2>Fechas de Exámenes</h2>
+        <ul>
+          <li>Parcial 1: 21/04/2025</li>
+          <li>Parcial 2: 09/06/2025</li>
+          <li>Final: 30/06/2025</li>
+        </ul>
+      </div>
+      <div class="bloque">
+        <h2>Bibliografía</h2>
+        <p><strong>Diseño de páginas Web</strong> - Autor: Jack Davis</p>
+        <p><strong>Diseño web con CSS</strong> - Autor: Ralph G. Schulz</p>
+        <p><strong>Apuntes de clase y materiales complementarios:</strong></p>
+        <ul>
+          <li><a href="https://www.w3.org/" target="_blank">https://www.w3.org/</a></li>
+          <li><a href="https://www.pdf-manual.es/programacion-web/html/70-creacion-de-paginas-web-en-html.html" target="_blank">PDF Manual</a></li>
+          <li><a href="https://html-now.github.io/" target="_blank">https://html-now.github.io/</a></li>
+          <li><a href="https://www.w3schools.com/" target="_blank">https://www.w3schools.com/</a></li>
+        </ul>
+      </div>
+    </section>
 
-  <div class="contenido">
-    <h2>Bibliografía</h2>
-    <p><strong>Diseño de páginas Web</strong> - Autor: Jack Davis</p>
-    <p><strong>Diseño web con CSS</strong> - Autor: Ralph G. Schulz</p>
+    <section class="derecha">
+      <div class="bloque">
+        <h2>Actividades UVAs</h2>
+        <h3>UVA1</h3>
+        <ul>
+          <li><a href="index.html">Actividad 1 (Acerca de mí)</a></li>
+          <li><a href="desarrollo.html">Actividad 2 (Esta página)</a></li>
+          <li><a href="actividad3/index.html">Actividad 3 (Tabla de materias)</a></li>
+        </ul>
+      </div>
+    </section>
+    
+  </main>
 
-    <p><strong>Apuntes de clase y materiales complementarios:</strong></p>
-    <ul>
-      <li><a href="https://www.w3.org/" target="_blank">https://www.w3.org/</a></li>
-      <li><a href="https://www.pdf-manual.es/programacion-web/html/70-creacion-de-paginas-web-en-html.html" target="_blank">PDF Manual</a></li>
-      <li><a href="https://html-now.github.io/" target="_blank">https://html-now.github.io/</a></li>
-      <li><a href="https://www.w3schools.com/" target="_blank">https://www.w3schools.com/</a></li>
-    </ul>
-
-    <h2>Fechas de Exámenes</h2>
-    <ul>
-      <li>Parcial 1: 21/04/2025</li>
-      <li>Parcial 2: 09/06/2025</li>
-      <li>Final: 30/06/2025</li>
-    </ul>
-
-    <h2>Actividades UVAs</h2>
-    <h3>UVA1</h3>
-    <ul>
-      <li><a href="index.html">Actividad 1 (Acerca de mí)</a></li>
-      <li><a href="desarrollo.html">Actividad 2 (Esta página)</a></li>
-      <li><a href="actividad3/index.html">Actividad 3 (Tabla de materias)</a></li>
-    </ul>
-  </div>
-
-  <footer style="background-color: #444; color: white; text-align: center; padding: 1em;">
-    <p>Derechos reservados</p>
+  <footer class="footer-desa">
+    Curso: 16872 / Profesora: Patricia Litovicius
   </footer>
 
   <script>
@@ -70,4 +80,5 @@
   </script>
 
 </body>
+
 </html>
