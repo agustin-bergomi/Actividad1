@@ -4,6 +4,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* aumento el tamaño de la fuente para pantallas mas grandes */
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+}
+
 /* Uso este media query para responsivness porque asi detecta tamaño de pantalla */
 @media (max-width: 640px) {
     /* Ajusto la tabla para que sea mas legible en pantallas chicas */
