@@ -1,12 +1,12 @@
-/* Hago que el footer quede pegado abajo usando min-h-screen en el body y flex-grow en el main */
+/* hago que el footer quede pegado abajo usando min-h-screen en el body y flex-grow en el main */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Uso este media query para responsivness porque así detecta tamaño de pantalla */
+/* Uso este media query para responsivness porque asi detecta tamaño de pantalla */
 @media (max-width: 640px) {
-    /* Ajusto la tabla para que sea más legible en pantallas pequeñas */
+    /* Ajusto la tabla para que sea mas legible en pantallas chicas */
     table {
         font-size: 0.8rem;
     }
@@ -21,7 +21,7 @@ nav, footer {
 }
 
 /* Estilos para diseño-desarrollo-web.html */
-/* Hago que las secciones tengan un borde suave y sombra para que se vea prolijo */
+/* sombra para que se vea prolijo */
 section {
     border: 1px solid #e5e7eb;
 }
@@ -33,22 +33,22 @@ section {
     }
 }
 
-/* Doy un padding extra a los links en la lista de UVAs para que no se vean amontonados */
+/* mas padding a los links en la lista de UVAs para que no se vean amontonados */
 ul.list-disc li a {
     padding-left: 0.5rem;
 }
 
-/* Cambio los enlaces a un gris oscuro para que combine con el tema negro */
+/* enlaces en gris oscuro para que combine con el tema negro */
 a {
     color: #4b5563;
 }
 
-/* Uso este gris para el botón porque combina con el tema */
+/* gris para el botón porque combina con el tema */
 button {
     background-color: #4b5563;
 }
 
- /* Un gris un poco más claro para el hover */
+ /* gris un poco más claro para el hover */
 button:hover {
     background-color: #6b7280;
 }
