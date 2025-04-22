@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Portfolio Estudiantil</title>
+    <!-- Traigo Tailwind desde el CDN para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Linkeo mi CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <!-- Menú de navegación, ahora negro -->
+    <nav class="bg-black p-4">
+        <ul class="flex justify-center space-x-6 text-white">
+            <li><a href="index.html" class="hover:underline">Home</a></li>
+            <li><a href="avisos.html" class="hover:underline">Avisos</a></li>
+            <li><a href="sobre-mi.html" class="hover:underline">Sobre mí</a></li>
+            <li><a href="materias-2025.html" class="hover:underline">Materias 2025</a></li>
+            <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow p-6 text-center">
+        <h1 class="text-3xl font-bold mb-6">Contacto</h1>
+        <!-- Formulario de contacto -->
+        <div class="max-w-md mx-auto">
+            <div class="mb-4">
+                <label for="nombre" class="block text-left">Nombre:</label>
+                <input type="text" id="nombre" class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-left">Correo Electrónico:</label>
+                <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <label for="asunto" class="block text-left">Asunto:</label>
+                <input type="text" id="asunto" class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <label for="mensaje" class="block text-left">Mensaje:</label>
+                <textarea id="mensaje" class="w-full p-2 border border-gray-300 rounded" rows="4"></textarea>
+            </div>
+            <button class="text-white p-2 rounded">Enviar</button>
+        </div>
+    </main>
+
+    <!-- Footer ahora negro -->
+    <footer class="bg-black text-white text-center p-4">
+        Agustín Bergomi 2025 - Derechos Reservados
+    </footer>
+</body>
+</html>

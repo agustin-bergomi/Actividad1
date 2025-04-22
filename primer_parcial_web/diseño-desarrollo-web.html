@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño y Desarrollo Web - Portfolio Estudiantil</title>
+    <!-- Traigo Tailwind desde el CDN para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Linkeo mi CSS personalizado, ajusto el path porque estoy en una subcarpeta -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <!-- Menú de navegación, ahora negro -->
+    <nav class="bg-black p-4">
+        <ul class="flex justify-center space-x-6 text-white">
+            <li><a href="../index.html" class="hover:underline">Home</a></li>
+            <li><a href="../avisos.html" class="hover:underline">Avisos</a></li>
+            <li><a href="../sobre-mi.html" class="hover:underline">Sobre mí</a></li>
+            <li><a href="../materias-2025.html" class="hover:underline">Materias 2025</a></li>
+            <li><a href="../contacto.html" class="hover:underline">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow p-6">
+        <h1 class="text-3xl font-bold mb-6 text-center">Diseño y Desarrollo Web</h1>
+        <!-- Secciones lado a lado para Fechas y Actividades -->
+        <div class="flex flex-col md:flex-row gap-6 mb-6">
+            <!-- Fechas de exámenes -->
+            <section class="flex-1 bg-white p-4 rounded shadow">
+                <h2 class="text-xl font-semibold mb-4">Fechas de exámenes</h2>
+                <ul class="list-disc list-inside">
+                    <li>Parcial 1: 15/05/2025</li>
+                    <li>Parcial 2: 20/06/2025</li>
+                    <li>Final: 10/07/2025</li>
+                </ul>
+            </section>
+            <!-- Actividades UVAs -->
+            <section class="flex-1 bg-white p-4 rounded shadow">
+                <h2 class="text-xl font-semibold mb-4">Actividades UVAs</h2>
+                <ul class="list-disc list-inside">
+                    <li><a href="https://github.com/usuario/uva1" target="_blank" class="hover:underline">UVA 1</a></li>
+                    <li><a href="https://github.com/usuario/uva2" target="_blank" class="hover:underline">UVA 2</a></li>
+                </ul>
+            </section>
+        </div>
+        <!-- Bibliografía de ancho completo -->
+        <section class="bg-white p-4 rounded shadow">
+            <h2 class="text-xl font-semibold mb-4">Bibliografía</h2>
+            <p>HTML y CSS: Diseño y Construcción de Sitios Web - Jon Duckett</p>
+            <p>Recursos adicionales disponibles en el campus virtual.</p>
+        </section>
+        <!-- Info del curso -->
+        <p class="mt-6 text-center">Curso: Diseño y Desarrollo Web / Profesora: Patricia Litovicius</p>
+    </main>
+
+    <!-- Footer ahora negro -->
+    <footer class="bg-black text-white text-center p-4">
+        Agustín Bergomi 2025 - Derechos Reservados
+    </footer>
+</body>
+</html>
