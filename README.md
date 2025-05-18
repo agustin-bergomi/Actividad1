@@ -7,7 +7,7 @@
 - Pagina galeria de arte.
 
 **Funcionalidades y conceptos:**
-- UX/UI, usabilidad
+- UX/UI, usabilidad, Responsive
 - Accesibilidad
 - Funcionalidad
 - Modularizacion
