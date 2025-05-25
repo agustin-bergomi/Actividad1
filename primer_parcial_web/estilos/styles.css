@@ -4,7 +4,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* aumento el tamaño de la fuente para pantallas mas grandes */
+/* aumento el tamaño de la fuente p ara pantallas mas grandes */
 @media (min-width: 1024px) {
     body {
         font-size: 20px;
@@ -58,4 +58,38 @@ button {
  /* gris un poco más claro para el hover */
 button:hover {
     background-color: #6b7280;
+}
+
+/* Estilos para el formulario de contacto */
+.form-input {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.error {
+    border-color: red !important;
+}
+
+#mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+}
+
+.error-text {
+    color: red;
 }
