@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="estilos/styles.css">
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
+        <!-- Selector de modo -->
+<div class="flex justify-end p-4 space-x-2">
+    <button onclick="setModo('claro')" class="modo-btn btn-claro">Modo Claro</button>
+    <button onclick="setModo('oscuro')" class="modo-btn btn-oscuro">Modo Oscuro</button>
+</div>
     <!-- Menu de navegacion -->
     <nav class="bg-black p-4">
         <ul class="flex justify-center space-x-6 text-white">
@@ -27,7 +32,7 @@
         <!-- Tabla con info de materias -->
         <table class="table-auto mx-auto border-collapse border border-gray-300">
             <thead>
-                <tr class="bg-gray-200">
+                <tr class="bg-white-200">
                     <th class="border border-gray-300 p-2">Materia</th>
                     <th class="border border-gray-300 p-2">Día y Horario</th>
                     <th class="border border-gray-300 p-2">Modalidad</th>
@@ -73,5 +78,7 @@
     <footer class="bg-black text-white text-center p-4">
         Agustín Bergomi 2025 - Derechos Reservados
     </footer>
+    <script src="scripts/dark_mode.js" defer></script>
+
 </body>
 </html>

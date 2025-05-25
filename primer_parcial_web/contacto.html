@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="estilos/styles.css">
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
+        <!-- Selector de modo -->
+<div class="flex justify-end p-4 space-x-2">
+    <button onclick="setModo('claro')" class="modo-btn btn-claro">Modo Claro</button>
+    <button onclick="setModo('oscuro')" class="modo-btn btn-oscuro">Modo Oscuro</button>
+</div>
     <!-- Menu de navegacion -->
     <nav class="bg-black p-4">
         <ul class="flex justify-center space-x-6 text-white">
@@ -53,6 +58,7 @@
     </footer>
 
     <script src="scripts/contacto.js" defer></script>
+    <script src="scripts/dark_mode.js" defer></script>
 
 </body>
 </html>
