@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejercicio 3</title>
+  <link rel="stylesheet" href="styles/syles.css"/>
+  <script>
+    window.onload = function () {
+      const nombre = prompt("¿Cuál es tu nombre?");
+      const apellido = prompt("¿Cuál es tu apellido?");
+      const fechaNacimiento = prompt("¿Cuál es tu fecha de nacimiento? (AAAA-MM-DD)");
+
+      alert("¡Hola " + nombre + " " + apellido + "!");
+
+      const hoy = new Date();
+      const nacimiento = new Date(fechaNacimiento);
+      const diferencia = hoy - nacimiento;
+      const diasVividos = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+      alert("Has vivido aproximadamente " + diasVividos + " días.");
+    };
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="variables_fijas.html">Ejercicio 1</a>
+    <a href="usuario_ingresa_datos.html">Ejercicio 2</a>
+    <a href="calcular_dias.html">Ejercicio 3</a>
+  </nav>
+
+  <h1>Ejercicio 3: Cálculo de días vividos</h1>
+  <p>El usuario ingresa su fecha de nacimiento y el sistema calcula cuántos días ha vivido hasta hoy.</p>
+</body>
+</html>
