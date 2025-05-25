@@ -129,3 +129,36 @@ body.bg-gray-900 .form-input {
 .btn-oscuro:hover {
     background-color: #374151; /* gris medio (gray-700) */
 }
+
+/* Adaptación de contenido a modo oscuro */
+body.bg-gray-900 {
+    background-color: #1a1a1a;
+    color: #f3f4f6;
+}
+
+/* Secciones claras que deben oscurecerse */
+body.bg-gray-900 section {
+    background-color: #2d2d2d;
+    color: #f3f4f6;
+    border-color: #4b5563;
+}
+
+/* Titulares en modo oscuro */
+body.bg-gray-900 h1,
+body.bg-gray-900 h2 {
+    color: #f9fafb;
+}
+
+/* Enlaces en modo oscuro */
+body.bg-gray-900 a {
+    color: #93c5fd; /* azul claro legible */
+}
+
+body.bg-gray-900 a:hover {
+    color: #bfdbfe;
+}
+
+/* Sombra más suave en modo oscuro */
+body.bg-gray-900 .shadow {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
