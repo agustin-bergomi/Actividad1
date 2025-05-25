@@ -70,7 +70,16 @@ button:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border-color 0.3s ease;
+    color: #1f2937; /* texto oscuro por defecto (gray-800) */
+    background-color: white;
 }
+
+body.bg-gray-900 .form-input {
+    color: #f9fafb; /* texto claro en modo oscuro (gray-100) */
+    background-color: #1f2937; /* fondo oscuro para los inputs */
+    border-color: #4b5563;
+}
+
 
 .form-input:focus {
     border-color: #007bff;
