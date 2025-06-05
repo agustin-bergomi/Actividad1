@@ -30,7 +30,9 @@ También se definen clases para errores (`.error`, `.error-text`) y éxito (`.su
 
 ### Dark Mode:
 
-- Al pasar a Dark Mode el formulario cambia de colores para que sea facil de leer por los usuarios
+- Al pasar a Dark Mode el formulario cambia de colores para que sea facil de leer por los usuarios.
+El tema (oscuro o claro) persiste a traves de la navegacion por las distintas paginas del sitio.
+Se adecuaron los estilos para que el diseño este alineado con ambos temas considerando, por ejemplo, los contrastes y la paleta de colores.
   
 ---
 
