@@ -9,24 +9,35 @@
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
 
-    <div class="p-4 text-right">
-        <div class="flex justify-end space-x-2">
-            <button onclick="setModo('claro')" class="modo-btn btn-claro">Modo Claro</button>
-            <button onclick="setModo('oscuro')" class="modo-btn btn-oscuro">Modo Oscuro</button>
-        </div>
+<!-- CONTROLES DE INTERFAZ: FIJOS, DEBAJO DE LA NAVBAR -->
+<div class="fixed top-20 right-4 bg-white shadow-lg rounded-xl p-4 space-y-4 border border-gray-300 z-50">
+    <!-- Modo Claro/Oscuro -->
+    <div class="flex justify-between space-x-2">
+        <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-4 rounded">
+            ☀️ Claro
+        </button>
+        <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-4 rounded">
+            🌙 Oscuro
+        </button>
+    </div>
 
-        <div class="mt-4">
-            <p class="text-sm font-medium mb-1">Tamaño de letra</p>
-            <div class="flex justify-end items-center space-x-2">
-                <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
-                <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
-            </div><br>
-            <button id="btn-daltonico" onclick="setModoDaltonico()" class="border border-gray-400 bg-blue-200 text-black px-4 py-2 rounded shadow hover:bg-blue-300">
-                Modo Daltónico: OFF
-            </button>
-            
+    <!-- Tamaño de Letra -->
+    <div>
+        <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
+        <div class="flex justify-between space-x-2">
+            <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+            <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
         </div>
     </div>
+
+    <!-- Modo Daltónico -->
+    <div class="text-center">
+        <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
+            Modo Daltónico: OFF
+        </button>
+    </div>
+</div>
+
 
     <nav class="bg-black p-4">
         <ul class="flex justify-center space-x-6 text-white">
