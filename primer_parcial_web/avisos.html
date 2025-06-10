@@ -9,36 +9,6 @@
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
 
-<!-- CONTROLES DE INTERFAZ: FIJOS, DEBAJO DE LA NAVBAR -->
-<div class="fixed top-20 right-4 bg-white shadow-lg rounded-xl p-4 space-y-4 border border-gray-300 z-50">
-    <!-- Modo Claro/Oscuro -->
-    <div class="flex justify-between space-x-2">
-        <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-4 rounded">
-            ☀️ Claro
-        </button>
-        <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-4 rounded">
-            🌙 Oscuro
-        </button>
-    </div>
-
-    <!-- Tamaño de Letra -->
-    <div>
-        <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
-        <div class="flex justify-between space-x-2">
-            <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
-            <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
-        </div>
-    </div>
-
-    <!-- Modo Daltónico -->
-    <div class="text-center">
-        <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
-            Modo Daltónico: OFF
-        </button>
-    </div>
-</div>
-
-
     <nav class="bg-black p-4">
         <ul class="flex justify-center space-x-6 text-white">
             <li><a href="index.html" class="hover:underline">Home</a></li>
@@ -49,16 +19,50 @@
         </ul>
     </nav>
 
-    <main id="main-content" class="flex-grow p-6 text-center">
-        <h1 class="text-3xl font-bold mb-6">Avisos</h1>
-        <!-- Lista desordenada con tareas/recordatorios -->
-        <ul class="list-disc list-inside mx-auto text-left max-w-md lg:max-w-2xl">
-            <li>Diseño y Desarrollo Web: Parcial - 21/04</li>
-            <li>Redes: Estudiar Hubs, Bdriges, Switches, Topologias</li>
-            <li>Arq computadores: estudiar compuertas logicas, binario a decimal</li>
-            <li>Sistemas de info: entregar avances tp, estudiar estructuras organizacionales</li>
-            <li>Intro a algoritmia: estudiar temas python de condicionales, loops, banderas, etc.</li>
-        </ul>
+    <!-- Contenido y panel accesibilidad en dos columnas -->
+    <main class="flex flex-col lg:flex-row flex-grow p-6 gap-6">
+
+        <!-- Panel de accesibilidad más angosto -->
+        <aside class="w-full lg:w-1/6 bg-white shadow-md rounded-xl p-4 border border-gray-300 space-y-4">
+            <!-- Modo Claro/Oscuro -->
+            <div class="flex justify-between space-x-2">
+                <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-3 rounded">
+                    ☀️ Claro
+                </button>
+                <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-3 rounded">
+                    🌙 Oscuro
+                </button>
+            </div>
+
+            <!-- Tamaño de Letra -->
+            <div>
+                <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
+                <div class="flex justify-between space-x-2">
+                    <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+                    <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+                </div>
+            </div>
+
+            <!-- Modo Daltónico -->
+            <div class="text-center">
+                <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
+                    Modo Daltónico: OFF
+                </button>
+            </div>
+        </aside>
+
+        <!-- Contenido principal -->
+        <section class="w-full lg:w-5/6 text-center">
+            <h1 class="text-3xl font-bold mb-6">Avisos</h1>
+            <ul class="list-disc list-inside mx-auto text-left max-w-md lg:max-w-2xl">
+                <li>Diseño y Desarrollo Web: Parcial - 21/04</li>
+                <li>Redes: Estudiar Hubs, Bdriges, Switches, Topologias</li>
+                <li>Arq computadores: estudiar compuertas logicas, binario a decimal</li>
+                <li>Sistemas de info: entregar avances tp, estudiar estructuras organizacionales</li>
+                <li>Intro a algoritmia: estudiar temas python de condicionales, loops, banderas, etc.</li>
+            </ul>
+        </section>
+
     </main>
 
     <footer class="bg-black text-white text-center p-4">
@@ -69,7 +73,6 @@
     <script src="scripts/tamano_letra.js" defer></script>
     <script src="scripts/daltonismo.js" defer></script>
 
-
-
 </body>
+
 </html>

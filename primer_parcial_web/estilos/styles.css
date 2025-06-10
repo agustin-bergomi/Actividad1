@@ -1,186 +1,67 @@
-/* hago que el footer quede pegado abajo usando min-h-screen en el body y flex-grow en el main */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* aumento el tamaño de la fuente p ara pantallas mas grandes */
-@media (min-width: 1024px) {
-    body {
-        font-size: 20px;
-    }
-}
-
-/* Uso este media query para responsivness porque asi detecta tamaño de pantalla */
-@media (max-width: 640px) {
-    /* Ajusto la tabla para que sea mas legible en pantallas chicas */
-    table {
-        font-size: 0.8rem;
-    }
-    th, td {
-        padding: 0.5rem;
-    }
-}
-
-/* color a negro para nav y footer */
-nav, footer {
-    background-color: #000000;
-}
-
-/* Estilos para diseño-desarrollo-web.html */
-/* sombra para que se vea prolijo */
-section {
-    border: 1px solid #e5e7eb;
-}
-
-/* Ajusto el layout de las secciones para pantallas chicas */
-@media (max-width: 768px) {
-    .md\:flex-row {
-        flex-direction: column;
-    }
-}
-
-/* mas padding a los links en la lista de UVAs para que no se vean amontonados */
-ul.list-disc li a {
-    padding-left: 0.5rem;
-}
-
-/* enlaces en gris oscuro para que combine con el tema negro */
-a {
-    color: #4b5563;
-}
-
-/* gris para el botón porque combina con el tema */
-button {
-    background-color: #4b5563;
-}
-
- /* gris un poco más claro para el hover */
-button:hover {
-    background-color: #6b7280;
-}
-
-/* Estilos para el formulario de contacto */
-.form-input {
-    display: block;
+/* Accessibility panel */
+aside {
     width: 100%;
-    max-width: 400px;
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
-    color: #1f2937; /* texto oscuro por defecto (gray-800) */
-    background-color: white;
+    height: auto; /* Let the height adjust to content */
+    min-height: fit-content; /* Ensure it wraps content tightly */
+    background-color: #ffffff; /* Default light mode background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for light mode */
+    border-radius: 0.75rem; /* Rounded corners */
+    padding: 1rem; /* Consistent padding */
+    border: 1px solid #e5e7eb; /* Light border for light mode */
+        max-height: 210px; /* Optional: cap the height for very long content */
+        overflow-y: auto; /* Add scrollbar if content overflows */
 }
 
-body.bg-gray-900 .form-input {
-    color: #f9fafb; /* texto claro en modo oscuro (gray-100) */
-    background-color: #1f2937; /* fondo oscuro para los inputs */
-    border-color: #4b5563;
+/* Dark mode styles for the accessibility panel */
+body.bg-gray-900 aside {
+    background-color: #2d2d2d; /* Darker background for dark mode */
+    border-color: #4b5563; /* Darker border for dark mode */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Softer shadow in dark mode */
 }
 
-
-.form-input:focus {
-    border-color: #007bff;
-    outline: none;
+/* Ensure buttons inside the panel adapt to dark mode */
+body.bg-gray-900 .modo-btn.bg-gray-100 {
+    background-color: #4b5563; /* Gray for light mode button in dark mode */
+    color: #f9fafb; /* White text */
 }
 
-.error {
-    border-color: red !important;
+body.bg-gray-900 .modo-btn.bg-gray-100:hover {
+    background-color: #6b7280; /* Hover state */
 }
 
-#mensaje {
-    margin-top: 15px;
-    font-weight: bold;
+body.bg-gray-900 .modo-btn.bg-gray-800 {
+    background-color: #1f2937; /* Keep dark mode button consistent */
 }
 
-.success {
-    color: green;
+body.bg-gray-900 .modo-btn.bg-gray-800:hover {
+    background-color: #374151;
 }
 
-.error-text {
-    color: red;
+body.bg-gray-900 #decrease-font,
+body.bg-gray-900 #increase-font {
+    background-color: #4b5563; /* Darker button background */
+    color: #f9fafb; /* White text */
 }
 
-/* Estilos para los botones de cambio de modo (claro/oscuro) */
-.modo-btn {
-    padding: 0.5rem 1rem;
-    border-radius: 0.375rem;
-    font-weight: bold;
-    color: white;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
+body.bg-gray-900 #decrease-font:hover,
+body.bg-gray-900 #increase-font:hover {
+    background-color: #6b7280; /* Hover state */
 }
 
-.btn-claro {
-    background-color: #facc15; /* amarillo Tailwind (yellow-400) */
+body.bg-gray-900 #btn-daltonico {
+    background-color: #1f2937; /* Dark background for daltonico button */
+    color: #f9fafb; /* White text */
+    border-color: #4b5563; /* Darker border */
 }
 
-.btn-claro:hover {
-    background-color: #fde047; /* amarillo más claro */
+body.bg-gray-900 #btn-daltonico:hover {
+    background-color: #374151; /* Hover state */
 }
 
-.btn-oscuro {
-    background-color: #1f2937; /* gris oscuro (gray-800) */
+/* Ensure responsiveness for smaller screens */
+@media (max-width: 1024px) {
+    aside {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 1rem; /* Space below panel in mobile view */
+    }
 }
-
-.btn-oscuro:hover {
-    background-color: #374151; /* gris medio (gray-700) */
-}
-
-/* Adaptación de contenido a modo oscuro */
-body.bg-gray-900 {
-    background-color: #1a1a1a;
-    color: #f3f4f6;
-}
-
-/* Secciones claras que deben oscurecerse */
-body.bg-gray-900 section {
-    background-color: #2d2d2d;
-    color: #f3f4f6;
-    border-color: #4b5563;
-}
-
-/* Titulares en modo oscuro */
-body.bg-gray-900 h1,
-body.bg-gray-900 h2 {
-    color: #f9fafb;
-}
-
-/* Enlaces en modo oscuro */
-body.bg-gray-900 a {
-    color: #93c5fd; /* azul claro legible */
-}
-
-body.bg-gray-900 a:hover {
-    color: #bfdbfe;
-}
-
-/* Sombra más suave en modo oscuro */
-body.bg-gray-900 .shadow {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-.daltonico {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-  }
-  
-  .daltonico nav,
-  .daltonico footer {
-    background-color: #004488 !important;
-    color: #ffff00 !important;
-  }
-  
-  .daltonico a {
-    color: #0066cc !important;
-  }
-  
-  .daltonico button {
-    background-color: #ffff00 !important;
-    color: #000000 !important;
-    border-color: #000000 !important;
-  }
-  
