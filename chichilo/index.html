@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -5,108 +6,185 @@
     <title>Cantina Chichilo de Buenos Aires</title>
     <meta name="keywords" content="cantina chichilo, restaurante argentina, cantina buenos aires, comida italiana, fusiles, tiramisu, caracoles, ranas, cordero patagonico">
     <meta name="description" content="Cantina Chichilo, una tradición de 62 años en Buenos Aires ofreciendo auténtica comida italiana en La Paternal.">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados y fuentes */
+        body {
+            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+    <script>
+        // Configuración de Tailwind para habilitar el modo oscuro basado en clases
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <div class="header-container">
-            <h1>Cantina Chichilo</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#menu">Menú</a></li>
-                    <li><a href="#gallery">Galería</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
+<body class="bg-stone-50 text-gray-800 dark:bg-gray-900">
+
+    <!-- Encabezado -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-red-800 dark:text-red-600">Cantina Chichilo</h1>
+            <div class="flex items-center space-x-4">
+                <!-- Botones para cambiar de modo -->
+                <button onclick="setModo('claro')" class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full shadow hover:bg-gray-300 text-sm">☀️ Claro</button>
+                <button onclick="setModo('oscuro')" class="bg-gray-700 text-white px-3 py-1 rounded-full shadow hover:bg-gray-600 text-sm">🌙 Oscuro</button>
+            </div>
         </div>
+        <nav class="bg-gray-100 dark:bg-gray-700">
+            <ul class="flex justify-center space-x-8 py-2">
+                <li><a href="#home" class="hover:text-red-700 dark:hover:text-red-500">Inicio</a></li>
+                <li><a href="#menu" class="hover:text-red-700 dark:hover:text-red-500">Menú</a></li>
+                <li><a href="#gallery" class="hover:text-red-700 dark:hover:text-red-500">Galería</a></li>
+                <li><a href="#contact" class="hover:text-red-700 dark:hover:text-red-500">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="container">
-        <section class="hero" id="home">
-            <h2>Bienvenidos a Cantina Chichilo</h2>
-            <p>Una tradición de 62 años en Buenos Aires, sirviendo auténtica comida italiana en La Paternal.</p>
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-6 py-8">
+
+        <!-- Sección de Bienvenida (Hero) -->
+        <section class="hero text-center py-16" id="home">
+            <h2 class="text-5xl font-bold text-gray-900 dark:text-white">Bienvenidos a Cantina Chichilo</h2>
+            <p class="mt-4 text-xl text-gray-700 dark:text-gray-200">Una tradición de 62 años en Buenos Aires, sirviendo auténtica comida italiana en La Paternal.</p>
         </section>
 
-        <section class="menu-section" id="menu">
-            <h2>Nuestro Menú</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <h3>Lentejas a Caballo</h3>
-                    <p>Deliciosas lentejas servidas con huevo frito.</p>
+        <!-- Sección del Menú -->
+        <section class="menu-section py-12" id="menu">
+            <h2 class="text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white">Nuestro Menú</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Los items del menú ahora tienen un fondo claro en modo oscuro para que el texto negro sea legible -->
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Lentejas a Caballo</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Deliciosas lentejas servidas con huevo frito.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Pasta con Chichiri</h3>
-                    <p>Pasta casera con garbanzos al estilo italiano.</p>
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Pasta con Chichiri</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Pasta casera con garbanzos al estilo italiano.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Mondongo a la Italiana</h3>
-                    <p>Guiso tradicional de mondongo con salsa de tomate.</p>
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Mondongo a la Italiana</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Guiso tradicional de mondongo con salsa de tomate.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Riñones al Vino Blanco</h3>
-                    <p>Riñones salteados en una suave salsa de vino blanco.</p>
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Riñones al Vino Blanco</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Riñones salteados en una suave salsa de vino blanco.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Calamarettis a la Escarpetta</h3>
-                    <p>Calamares tiernos en salsa para mojar pan.</p>
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Calamarettis a la Escarpetta</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Calamares tiernos en salsa para mojar pan.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Ranas a la Provenzal</h3>
-                    <p>Ranas frescas con ajo y perejil.</p>
+                 <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Ranas a la Provenzal</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Ranas frescas con ajo y perejil.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Caracoles a la Bordaleza</h3>
-                    <p>Caracoles en una rica salsa bordaleza.</p>
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Caracoles a la Bordaleza</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Caracoles en una rica salsa bordaleza.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Rabas a la Calabria</h3>
-                    <p>Calamares fritos al estilo calabrés.</p>
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Rabas a la Calabria</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Calamares fritos al estilo calabrés.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Merluza al Ajillo</h3>
-                    <p>Merluza fresca con salsa de ajo.</p>
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Merluza al Ajillo</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Merluza fresca con salsa de ajo.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Gambas al Ajillo</h3>
-                    <p>Camarones salteados con ajo y aceite de oliva.</p>
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Gambas al Ajillo</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Camarones salteados con ajo y aceite de oliva.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Tiramisú Calabrés</h3>
-                    <p>Postre clásico italiano con un toque calabrés.</p>
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Tiramisú Calabrés</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Postre clásico italiano con un toque calabrés.</p>
                 </div>
-                <div class="menu-item">
-                    <h3>Quinotos Caseros al Rhum</h3>
-                    <p>Quinotos en almíbar con helado, infusionados con ron.</p>
+                <div class="menu-item bg-white dark:bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-black">Quinotos Caseros al Rhum</h3>
+                    <p class="mt-2 text-gray-600 dark:text-black">Quinotos en almíbar con helado, infusionados con ron.</p>
                 </div>
             </div>
         </section>
 
-        <section class="gallery" id="gallery">
-            <h2>Galería</h2>
-            <div class="gallery-grid">
-                <img src="comida2.jpg" alt="Interior de Cantina Chichilo">
-                <img src="comida3.jpg" alt="Postre Chicholina">
-                <img src="comida4.jpg" alt="Ranas a la Provenzal">
-                <img src="comida5.jpg" alt="Caracoles a la Bordaleza">
-                <img src="comida6.jpg" alt="Picada Italiana">
+        <!-- Sección de Galería -->
+        <section class="gallery py-12" id="gallery">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <img src="comida2.jpg" alt="Interior de Cantina Chichilo" class="w-full h-64 object-cover rounded-md shadow">
+                <img src="comida3.jpg" alt="Postre Chicholina" class="w-full h-64 object-cover rounded-md shadow">
+                <img src="comida4.jpg" alt="Ranas a la Provenzal" class="w-full h-64 object-cover rounded-md shadow">
+                <img src="comida5.jpg" alt="Caracoles a la Bordaleza" class="w-full h-64 object-cover rounded-md shadow">
+                <img src="comida6.jpg" alt="Picada Italiana" class="w-full h-64 object-cover rounded-md shadow">
+                <img src="comida2.jpg" alt="Interior de Cantina Chichilo" class="w-full h-64 object-cover rounded-md shadow">
             </div>
-        </section>
+            
+        </section>  
 
-        <section class="contact" id="contact">
-            <h2>Contacto</h2>
-            <p>Camarones 1901, Esq. Terrero 2006, La Paternal, CABA, Argentina</p>
-            <p>Teléfonos: 011-4584-1263 / 1150200152</p>
-            <p>Email: <a href="mailto:chichilo3554@hotmail.com">chichilo3554@hotmail.com</a></p>
-            <p>Horario:</p>
-            <p>Jueves a Sábados: 20:30 - 23:30</p>
-            <p>Sábados y Domingos: 12:30 - 14:30</p>
+        <!-- Sección de Contacto -->
+        <section class="contact py-12" id="contact">
+            <div class="bg-white dark:bg-gray-200 p-8 rounded-lg shadow-lg text-center">
+                 <h2 class="text-4xl font-bold mb-6 text-gray-900 dark:text-black">Contacto</h2>
+                 <p class="text-gray-700 dark:text-black">Camarones 1901, Esq. Terrero 2006, La Paternal, CABA, Argentina</p>
+                 <p class="text-gray-700 dark:text-black">Teléfonos: 011-4584-1263 / 1150200152</p>
+                 <p class="text-gray-700 dark:text-black">Email: <a href="mailto:chichilo3554@hotmail.com" class="text-red-700 hover:underline dark:text-red-800">chichilo3554@hotmail.com</a></p>
+                 <p class="mt-4 text-gray-700 dark:text-black"><strong>Horario:</strong></p>
+                 <p class="text-gray-700 dark:text-black">Jueves a Sábados: 20:30 - 23:30</p>
+                 <p class="text-gray-700 dark:text-black">Sábados y Domingos: 12:30 - 14:30</p>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Pie de página -->
+    <footer class="bg-gray-800 text-white text-center py-6">
         <p>Cantina Chichilo de Buenos Aires - Desde 1956</p>
-        <p>Ganadora de los Premios Clarín y Martín Fierro 2005</p>
+        <p class="text-sm text-gray-400 mt-1">Ganadora de los Premios Clarín y Martín Fierro 2005</p>
     </footer>
+
+    <!-- Script para el modo oscuro -->
+    <script>
+        // Función para establecer el modo (claro/oscuro)
+        function setModo(modo) {
+            if (modo === 'oscuro') {
+                // Agrega la clase 'dark' al elemento <html>
+                document.documentElement.classList.add('dark');
+                // Guarda la preferencia en el almacenamiento local
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Quita la clase 'dark' del elemento <html>
+                document.documentElement.classList.remove('dark');
+                // Guarda la preferencia en el almacenamiento local
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Al cargar la página, comprueba la preferencia guardada o la del sistema
+        window.onload = function() {
+            const themeGuardado = localStorage.getItem('theme');
+            const prefiereOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (themeGuardado === 'dark' || (!themeGuardado && prefiereOscuro)) {
+                setModo('oscuro');
+            } else {
+                setModo('claro');
+            }
+        };
+    </script>
 </body>
 </html>

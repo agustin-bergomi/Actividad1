@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gimnasio PowerFit</title>
   <link rel="stylesheet" href="estilos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="scripts/dark_mode.js" defer></script>
 </head>
 <body class="modo-claro">
 
@@ -12,9 +14,9 @@
     <h1>Bienvenido a PowerFit 💪</h1>
     <p>¡Transformá tu cuerpo, transformá tu vida!</p>
 
-    <div class="modo-toggle">
-      <button onclick="cambiarModo('claro')">☀️ Claro</button>
-      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
+    <div class="absolute top-4 right-4 space-x-2">
+      <button onclick="setModo('claro')" class="bg-white text-black px-4 py-2 rounded shadow hover:bg-gray-200">☀️ Claro</button>
+      <button onclick="setModo('oscuro')" class="bg-gray-800 text-white px-4 py-2 rounded shadow hover:bg-gray-700">🌙 Oscuro</button>
     </div>
   </header>
 

@@ -5,52 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto</title>
   <link rel="stylesheet" href="estilos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="scripts/dark_mode.js" defer></script>
 </head>
-<body class="modo-claro">
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
-  <header>
-    <h1>Contacto 📬</h1>
-    <p>¿Querés comunicarte? Dejá tu mensaje acá abajo</p>
-    <div class="modo-toggle">
-      <button onclick="cambiarModo('claro')">☀️ Claro</button>
-      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
+  <!-- Encabezado con botones modo claro/oscuro -->
+  <header class="bg-black text-white relative p-6 text-center">
+    <h1 class="text-3xl font-bold">Contacto 📬</h1>
+    <p class="text-lg">¿Querés comunicarte? Dejá tu mensaje acá abajo</p>
+    <div class="absolute top-4 right-4 space-x-2">
+      <button onclick="setModo('claro')" class="bg-white text-black px-4 py-2 rounded shadow hover:bg-gray-200">☀️ Claro</button>
+      <button onclick="setModo('oscuro')" class="bg-gray-800 text-white px-4 py-2 rounded shadow hover:bg-gray-700">🌙 Oscuro</button>
     </div>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="avisos.html">Avisos</a>
-    <a href="sobre_mi.html">Sobre mí</a>
-    <a href="materias.html">Materias</a>
-    <a href="contacto.html">Contacto</a>
+  <!-- Navegación -->
+  <nav class="bg-gray-800 text-white flex justify-center space-x-4 p-4">
+    <a href="index.html" class="hover:underline">Home</a>
+    <a href="avisos.html" class="hover:underline">Avisos</a>
+    <a href="sobre_mi.html" class="hover:underline">Sobre mí</a>
+    <a href="materias.html" class="hover:underline">Materias</a>
+    <a href="contacto.html" class="hover:underline">Contacto</a>
   </nav>
 
-  <div class="contenido">
-    <form>
-      <label for="nombre">Nombre:</label><br />
-      <input type="text" id="nombre" name="nombre" required /><br /><br />
 
-      <label for="email">Correo electrónico:</label><br />
-      <input type="email" id="email" name="email" required /><br /><br />
 
-      <label for="mensaje">Mensaje:</label><br />
-      <textarea id="mensaje" name="mensaje" rows="5" cols="40" required></textarea><br /><br />
+  <!-- Contenido principal -->
+  <main class="flex-grow p-6 flex justify-center items-start">
+    <form class="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg space-y-6">
+      <div>
+        <label for="nombre" class="block font-semibold text-black">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required class="w-full border border-gray-300 rounded px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
 
-      <button type="submit" class="enviar">Enviar</button>
+      <div>
+        <label for="email" class="block font-semibold text-black">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <div>
+        <label for="mensaje" class="block font-semibold text-black">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required class="w-full border border-gray-300 rounded px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Enviar</button>
     </form>
-  </div>
+  </main>
 
-  <footer style="background-color: #444; color: white; text-align: center; padding: 1em;">
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-4">
     <p>Derechos reservados</p>
   </footer>
-
-  <script>
-    function cambiarModo(modo) {
-      const body = document.body;
-      body.classList.toggle('modo-oscuro', modo === 'oscuro');
-      body.classList.toggle('modo-claro', modo === 'claro');
-    }
-  </script>
 
 </body>
 </html>

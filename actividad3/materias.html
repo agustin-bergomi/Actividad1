@@ -5,47 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Materias 2025</title>
   <link rel="stylesheet" href="estilos.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="scripts/dark_mode.js" defer></script>
 </head>
-<body class="modo-claro">
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
-  <header>
-    <h1>Materias 2025 📘</h1>
-    <p>Primer cuatrimestre - UADE</p>
-    <div class="modo-toggle">
-      <button onclick="cambiarModo('claro')">☀️ Claro</button>
-      <button onclick="cambiarModo('oscuro')">🌙 Oscuro</button>
+  <!-- Encabezado con toggle -->
+  <header class="bg-black text-white p-6 text-center relative">
+    <h1 class="text-3xl font-bold">Materias 2025 📘</h1>
+    <p class="text-lg">Primer cuatrimestre - UADE</p>
+    <div class="absolute top-4 right-4 space-x-2">
+      <button onclick="setModo('claro')" class="bg-white text-black px-4 py-2 rounded shadow hover:bg-gray-200">☀️ Claro</button>
+      <button onclick="setModo('oscuro')" class="bg-gray-800 text-white px-4 py-2 rounded shadow hover:bg-gray-700">🌙 Oscuro</button>
     </div>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="avisos.html">Avisos</a>
-    <a href="sobre_mi.html">Sobre mí</a>
-    <a href="materias.html">Materias</a>
-    <a href="contacto.html">Contacto</a>
+  <!-- Navegación -->
+  <nav class="bg-gray-800 text-white flex justify-center space-x-4 p-4">
+    <a href="index.html" class="hover:underline">Home</a>
+    <a href="avisos.html" class="hover:underline">Avisos</a>
+    <a href="sobre_mi.html" class="hover:underline">Sobre mí</a>
+    <a href="materias.html" class="hover:underline">Materias</a>
+    <a href="contacto.html" class="hover:underline">Contacto</a>
   </nav>
 
-  <div class="contenido">
-    <ul>
-      <li><a href="../desarrollo.html" target="_blank">Diseño y Desarrollo Web</a></li>
+  <!-- Contenido -->
+  <main class="flex-grow p-6 max-w-3xl mx-auto">
+    <h2 class="text-2xl font-semibold mb-4">Listado de Materias</h2>
+    <ul class="list-disc list-inside text-lg space-y-2">
+      <li><a href="../desarrollo.html" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">Diseño y Desarrollo Web</a></li>
       <li>Sistemas de Información</li>
       <li>Arquitectura de los Computadores</li>
       <li>Redes</li>
       <li>Intro a la Algoritmia</li>
     </ul>
-  </div>
+  </main>
 
-  <footer style="background-color: #444; color: white; text-align: center; padding: 1em;">
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-4">
     <p>Derechos reservados</p>
   </footer>
-
-  <script>
-    function cambiarModo(modo) {
-      const body = document.body;
-      body.classList.toggle('modo-oscuro', modo === 'oscuro');
-      body.classList.toggle('modo-claro', modo === 'claro');
-    }
-  </script>
 
 </body>
 </html>
