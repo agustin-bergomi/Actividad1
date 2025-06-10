@@ -1,67 +1,332 @@
+
+/* General body styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Ensure font size doesn't interfere with tamano_letra.js */
+body, #main-content {
+    font-size: inherit; /* Allow inline fontSize from JS to take precedence */
+}
+
+/* Increase font size for larger screens */
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+/* Adjust table for smaller screens */
+@media (max-width: 640px) {
+    table {
+        font-size: 0.8rem;
+    }
+    th, td {
+        padding: 0.5rem;
+    }
+}
+
+/* Nav and footer styles */
+nav, footer {
+    background-color: #000000;
+}
+
 /* Accessibility panel */
 aside {
     width: 100%;
-    height: auto; /* Let the height adjust to content */
-    min-height: fit-content; /* Ensure it wraps content tightly */
-    background-color: #ffffff; /* Default light mode background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for light mode */
-    border-radius: 0.75rem; /* Rounded corners */
-    padding: 1rem; /* Consistent padding */
-    border: 1px solid #e5e7eb; /* Light border for light mode */
-        max-height: 210px; /* Optional: cap the height for very long content */
-        overflow-y: auto; /* Add scrollbar if content overflows */
+    height: auto; /* Fit content */
+    min-height: fit-content; /* Ensure tight wrapping */
+    background-color: #ffffff; /* Light mode default */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 0.75rem;
+    padding: 1rem;
+    border: 1px solid #e5e7eb; /* Light border */
+    max-height: 300px; /* Optional: cap the height for very long content */
+    overflow-y: auto; /* Add scrollbar if content overflows */
 }
 
-/* Dark mode styles for the accessibility panel */
+/* Dark mode for accessibility panel */
 body.bg-gray-900 aside {
-    background-color: #2d2d2d; /* Darker background for dark mode */
-    border-color: #4b5563; /* Darker border for dark mode */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Softer shadow in dark mode */
+    background-color: #2d2d2d; /* Dark mode background */
+    border-color: #4b5563; /* Dark border */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Ensure buttons inside the panel adapt to dark mode */
+/* Ensure responsiveness for smaller screens */
+@media (max-width: 1024px) {
+    aside {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Section styles */
+section {
+    border: 1px solid #e5e7eb; /* Light mode border */
+}
+
+/* Dark mode for section */
+body.bg-gray-900 section {
+    background-color: #2d2d2d;
+    color: #f3f4f6;
+    border-color: #4b5563;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .md\:flex-row {
+        flex-direction: column;
+    }
+}
+
+/* List link padding */
+ul.list-disc li a {
+    padding-left: 0.5rem;
+}
+
+/* General link styles */
+a {
+    color: #4b5563; /* Dark gray for light mode */
+}
+
+/* Dark mode links */
+body.bg-gray-900 a {
+    color: #93c5fd; /* Light blue for dark mode */
+}
+
+body.bg-gray-900 a:hover {
+    color: #bfdbfe;
+}
+
+/* General button styles */
+button {
+    background-color: #4b5563;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6b7280;
+}
+
+/* Accessibility panel buttons */
+.modo-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Light mode button */
+.modo-btn.bg-gray-100 {
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+/* Light mode button hover */
+.modo-btn.bg-gray-100:hover {
+    background-color: #e5e7eb;
+}
+
+/* Dark mode button */
+.modo-btn.bg-gray-800 {
+    background-color: #1f2937;
+    color: #f9fafb;
+}
+
+/* Dark mode button hover */
+.modo-btn.bg-gray-800:hover {
+    background-color: #374151;
+}
+
+/* Dark mode styles for accessibility buttons */
 body.bg-gray-900 .modo-btn.bg-gray-100 {
-    background-color: #4b5563; /* Gray for light mode button in dark mode */
-    color: #f9fafb; /* White text */
+    background-color: #4b5563;
+    color: #f9fafb;
 }
 
 body.bg-gray-900 .modo-btn.bg-gray-100:hover {
-    background-color: #6b7280; /* Hover state */
+    background-color: #6b7280;
 }
 
 body.bg-gray-900 .modo-btn.bg-gray-800 {
-    background-color: #1f2937; /* Keep dark mode button consistent */
+    background-color: #1f2937;
+    color: #f9fafb;
 }
 
 body.bg-gray-900 .modo-btn.bg-gray-800:hover {
     background-color: #374151;
 }
 
+/* Font size buttons */
+#decrease-font, #increase-font {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+}
+
+#decrease-font:hover, #increase-font:hover {
+    background-color: #d1d5db;
+}
+
+/* Dark mode for font size buttons */
 body.bg-gray-900 #decrease-font,
 body.bg-gray-900 #increase-font {
-    background-color: #4b5563; /* Darker button background */
-    color: #f9fafb; /* White text */
+    background-color: #4b5563;
+    color: #f9fafb;
 }
 
 body.bg-gray-900 #decrease-font:hover,
 body.bg-gray-900 #increase-font:hover {
-    background-color: #6b7280; /* Hover state */
+    background-color: #6b7280;
 }
 
+/* Daltonism button */
+#btn-daltonico {
+    background-color: #dbeafe;
+    color: #1f2937;
+    border: 1px solid #9ca3af;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: medium;
+}
+
+#btn-daltonico:hover {
+    background-color: #bfdbfe;
+}
+
+/* Dark mode for daltonism button */
 body.bg-gray-900 #btn-daltonico {
-    background-color: #1f2937; /* Dark background for daltonico button */
-    color: #f9fafb; /* White text */
-    border-color: #4b5563; /* Darker border */
+    background-color: #1f2937;
+    color: #f9fafb;
+    border-color: #4b5563;
 }
 
 body.bg-gray-900 #btn-daltonico:hover {
-    background-color: #374151; /* Hover state */
+    background-color: #374151;
 }
 
-/* Ensure responsiveness for smaller screens */
-@media (max-width: 1024px) {
-    aside {
-        width: 100%; /* Full width on smaller screens */
-        margin-bottom: 1rem; /* Space below panel in mobile view */
-    }
+/* Daltonism mode styles (high specificity to override others) */
+body.daltonico {
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
+
+body.daltonico nav,
+body.daltonico footer {
+    background-color: #004488 !important;
+    color: #ffff00 !important;
+}
+
+body.daltonico a {
+    color: #0066cc !important;
+}
+
+body.daltonico button {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+body.daltonico aside {
+    background-color: #ffffff !important;
+    border-color: #000000 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.daltonico .modo-btn.bg-gray-100,
+body.daltonico .modo-btn.bg-gray-800,
+body.daltonico #decrease-font,
+body.daltonico #increase-font,
+body.daltonico #btn-daltonico {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+/* Form input styles */
+.form-input {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    color: #1f2937;
+    background-color: white;
+}
+
+body.bg-gray-900 .form-input {
+    color: #f9fafb;
+    background-color: #1f2937;
+    border-color: #4b5563;
+}
+
+body.daltonico .form-input {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.error {
+    border-color: red !important;
+}
+
+#mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+}
+
+.error-text {
+    color: red;
+}
+
+/* Dark mode for headings */
+body.bg-gray-900 h1,
+body.bg-gray-900 h2 {
+    color: #f9fafb;
+}
+
+/* Daltonism mode for headings */
+body.daltonico h1,
+body.daltonico h2 {
+    color: #000000 !important;
+}
+
+/* Estilo de tabla en modo oscuro */
+body.bg-gray-900 table {
+    background-color: #1f2937; /* gris oscuro */
+    color: #f9fafb; /* texto claro */
+}
+
+body.bg-gray-900 table th,
+body.bg-gray-900 table td {
+    border-color: #4b5563; /* bordes oscuros */
+}
+
+/* Estilo de tabla en modo daltonismo */
+body.daltonico table {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+body.daltonico table th,
+body.daltonico table td {
+    border-color: #000000 !important;
+}
+

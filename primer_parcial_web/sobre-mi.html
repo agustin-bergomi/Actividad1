@@ -5,46 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre mí - Portfolio Estudiantil</title>
-    <!-- Traigo Tailwind desde el CDN para estilos rapidos y responsivos -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Linkeo CSS personalizado -->
     <link rel="stylesheet" href="estilos/styles.css">
 </head>
 
 <body class="flex flex-col min-h-screen bg-gray-100">
-        <!-- Selector de modo -->
-<!-- CONTROLES DE INTERFAZ: FIJOS, DEBAJO DE LA NAVBAR -->
-<div class="fixed top-20 right-4 bg-white shadow-lg rounded-xl p-4 space-y-4 border border-gray-300 z-50">
-    <!-- Modo Claro/Oscuro -->
-    <div class="flex justify-between space-x-2">
-        <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-4 rounded">
-            ☀️ Claro
-        </button>
-        <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-4 rounded">
-            🌙 Oscuro
-        </button>
-    </div>
-
-    <!-- Tamaño de Letra -->
-    <div>
-        <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
-        <div class="flex justify-between space-x-2">
-            <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
-            <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
-        </div>
-    </div>
-
-    <!-- Modo Daltónico -->
-    <div class="text-center">
-        <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
-            Modo Daltónico: OFF
-        </button>
-    </div>
-</div>
-
-        </div>
-    </div><br>
-    <!-- Menu de navegacion -->
     <nav class="bg-black p-4">
         <ul class="flex justify-center space-x-6 text-white">
             <li><a href="index.html" class="hover:underline">Home</a></li>
@@ -55,28 +20,50 @@
         </ul>
     </nav>
 
-    <!-- Contenido principal -->
-    <main id="main-content" class="flex-grow p-6 text-center">
-                <!-- Selector de modo -->
+    <main class="flex flex-col lg:flex-row flex-grow p-6 gap-6">
+        <!-- Panel lateral de accesibilidad -->
+        <aside class="w-full lg:w-1/6 bg-white shadow-md rounded-xl p-4 border border-gray-300 space-y-4">
+            <div class="flex justify-between space-x-2">
+                <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-3 rounded">
+                    ☀️ Claro
+                </button>
+                <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-3 rounded">
+                    🌙 Oscuro
+                </button>
+            </div>
+            <div>
+                <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
+                <div class="flex justify-between space-x-2">
+                    <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+                    <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
+                    Modo Daltónico: OFF
+                </button>
+            </div>
+        </aside>
 
-        </div>
-        <h1 class="text-3xl font-bold mb-6">Sobre mí</h1>
-        <!-- Presentacion personal -->
-        <img src="img/profile.jpg" alt="Mi foto" class="w-48 h-48 rounded-full mx-auto mb-4">
-        <p class="max-w-md mx-auto">Hola, soy Agustín Bergomi, estudiante de Licenciatura en Gestión de Tecnología de la
-            Información (Sistemas).
-            <br><br>
-            Me apasiona el desarrollo web y estoy cursando el cuatrimestre 2025 con mucho entusiasmo. Me interesa todo
-            lo relacionado a IT y la programacion, actualmente trabajo como Test Automation Engineer (TAE) en una
-            empresa multinacional aplicando las mejores practicas y asegurando que el software se entrega con la calidad
-            esperada. Me capacito constantemente en temas de programacion principalmente en herramientas de Testing.
-        </p>
+        <!-- Contenido principal -->
+        <section id="main-content" class="w-full lg:w-5/6 text-center">
+            <h1 class="text-3xl font-bold mb-6">Sobre mí</h1>
+            <img src="img/profile.jpg" alt="Mi foto" class="w-48 h-48 rounded-full mx-auto mb-4">
+            <p class="max-w-md mx-auto">
+                Hola, soy Agustín Bergomi, estudiante de Licenciatura en Gestión de Tecnología de la Información (Sistemas).
+                <br><br>
+                Me apasiona el desarrollo web y estoy cursando el cuatrimestre 2025 con mucho entusiasmo. Me interesa todo
+                lo relacionado a IT y la programación. Actualmente trabajo como Test Automation Engineer (TAE) en una
+                empresa multinacional, aplicando las mejores prácticas y asegurando que el software se entregue con la calidad
+                esperada. Me capacito constantemente en temas de programación, principalmente en herramientas de testing.
+            </p>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-black text-white text-center p-4">
         Agustín Bergomi 2025 - Derechos Reservados
     </footer>
+
     <script src="scripts/dark_mode.js" defer></script>
     <script src="scripts/tamano_letra.js" defer></script>
     <script src="scripts/daltonismo.js" defer></script>

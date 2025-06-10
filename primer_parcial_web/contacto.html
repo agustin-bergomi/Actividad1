@@ -8,44 +8,7 @@
     <link rel="stylesheet" href="estilos/styles.css">
 </head>
 
-
-<body class="flex flex-col min-h-screen bg-gray-800">
-    
-<!-- CONTENEDOR DE CONTROLES DE INTERFAZ -->
-<!-- CONTROLES DE INTERFAZ: FIJOS, DEBAJO DE LA NAVBAR -->
-<div class="fixed top-20 right-4 bg-white shadow-lg rounded-xl p-4 space-y-4 border border-gray-300 z-50">
-    <!-- Modo Claro/Oscuro -->
-    <div class="flex justify-between space-x-2">
-        <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-4 rounded">
-            ☀️ Claro
-        </button>
-        <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-4 rounded">
-            🌙 Oscuro
-        </button>
-    </div>
-
-    <!-- Tamaño de Letra -->
-    <div>
-        <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
-        <div class="flex justify-between space-x-2">
-            <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
-            <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
-        </div>
-    </div>
-
-    <!-- Modo Daltónico -->
-    <div class="text-center">
-        <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
-            Modo Daltónico: OFF
-        </button>
-    </div>
-</div>
-
-
-</div>
-
-    </header>
-    
+<body class="flex flex-col min-h-screen bg-gray-100">
 
     <!-- Menú de navegación -->
     <nav class="bg-black p-4">
@@ -58,43 +21,67 @@
         </ul>
     </nav>
 
-    <!-- Contenido principal -->
-    <main id="main-content" class="flex-grow p-6">
-        <h1 class="text-3xl font-bold mb-6 text-center">Contacto</h1>
+    <main class="flex flex-col lg:flex-row flex-grow p-6 gap-6">
+        <!-- Panel lateral de accesibilidad -->
+        <aside class="w-full lg:w-1/6 bg-white shadow-md rounded-xl p-4 border border-gray-300 space-y-4">
+            <div class="flex justify-between space-x-2">
+                <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-3 rounded">
+                    ☀️ Claro
+                </button>
+                <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-3 rounded">
+                    🌙 Oscuro
+                </button>
+            </div>
+            <div>
+                <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
+                <div class="flex justify-between space-x-2">
+                    <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+                    <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
+                    Modo Daltónico: OFF
+                </button>
+            </div>
+        </aside>
 
-        <!-- Formulario -->
-        <div class="max-w-md mx-auto">
-            <form id="contactoForm">
-                <div class="mb-4">
-                    <label for="nombre" class="block text-left">Nombre:</label>
-                    <input type="text" id="nombre" class="form-input w-full">
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-left">Correo Electrónico:</label>
-                    <input type="email" id="email" class="form-input w-full">
-                </div>
-                <div class="mb-4">
-                    <label for="asunto" class="block text-left">Asunto:</label>
-                    <input type="text" id="asunto" class="form-input w-full">
-                </div>
-                <div class="mb-4">
-                    <label for="mensajeTexto" class="block text-left">Mensaje:</label>
-                    <textarea id="mensajeTexto" class="form-input w-full" rows="4"></textarea>
-                </div>
-                <button type="submit" class="text-white p-2 rounded bg-gray-600 hover:bg-gray-700">Enviar</button>
-            </form>
-            <div id="mensaje" class="mt-4"></div>
-        </div>
+        <!-- Contenido principal -->
+        <section id="main-content" class="w-full lg:w-5/6">
+            <br><h1 class="text-3xl font-bold mb-6 text-center">Contacto</h1>
+
+            <!-- Formulario -->
+            <div class="max-w-md mx-auto">
+                <form id="contactoForm">
+                    <div class="mb-4">
+                        <label for="nombre" class="block text-left">Nombre:</label>
+                        <input type="text" id="nombre" class="form-input w-full">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-left">Correo Electrónico:</label>
+                        <input type="email" id="email" class="form-input w-full">
+                    </div>
+                    <div class="mb-4">
+                        <label for="asunto" class="block text-left">Asunto:</label>
+                        <input type="text" id="asunto" class="form-input w-full">
+                    </div>
+                    <div class="mb-4">
+                        <label for="mensajeTexto" class="block text-left">Mensaje:</label>
+                        <textarea id="mensajeTexto" class="form-input w-full" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="text-white p-2 rounded bg-gray-600 hover:bg-gray-700">Enviar</button>
+                </form>
+                <div id="mensaje" class="mt-4"></div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-black text-white text-center p-4">
         Agustín Bergomi 2025 - Derechos Reservados
     </footer>
 
-
     <script src="scripts/contacto.js" defer></script>
-    <script src="scripts/dark_mode.js"></script>
+    <script src="scripts/dark_mode.js" defer></script>
     <script src="scripts/tamano_letra.js" defer></script>
     <script src="scripts/daltonismo.js" defer></script>
 

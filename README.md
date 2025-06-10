@@ -1,125 +1,94 @@
-# 📬 Formulario de Contacto – Portfolio
-
-https://agustin-bergomi.github.io/Actividad1/primer_parcial_web/contacto.html
-
-Este formulario permite a los visitantes del portfolio dejar un mensaje de contacto. Incluye validaciones de los datos ingresados y brinda retroalimentación al usuario según el resultado.
-
----
-
-## 🧱 Estructura del formulario
-
-El formulario se encuentra en `contacto.html` y contiene los siguientes campos:
-
-- **Nombre** (`input type="text"`)
-- **Correo Electrónico** (`input type="text"`)  
-- **Asunto** (`input type="text"`)
-- **Mensaje** (`textarea`)
-- **Botón Enviar**
-
-> Cada campo está estilizado con la clase `form-input` definida en el archivo `styles.css`.
-
----
-
-## 🎨 Estilos
-
-Los estilos están definidos en el archivo:  
-📁 `estilos/styles.css`
-
-Se utiliza una clase común para los inputs (`.form-input`) con estilos responsivos y pseudoclases como `:focus`.  
-También se definen clases para errores (`.error`, `.error-text`) y éxito (`.success`).
-
-### Dark Mode:
-
-- Al pasar a Dark Mode el formulario cambia de colores para que sea facil de leer por los usuarios.
-El tema (oscuro o claro) persiste a traves de la navegacion por las distintas paginas del sitio.
-Se adecuaron los estilos para que el diseño este alineado con ambos temas considerando, por ejemplo, los contrastes y la paleta de colores.
-  
----
-
-## ⚙️ Validación
-
-La lógica de validación está en un script JavaScript ubicado en:  
-📁 `scripts/contacto.js`
-
-### Reglas:
-
-- Todos los campos son obligatorios.
-- El email debe tener un formato válido (ej: `usuario@dominio.com`).
-- Si hay errores, se marcan los campos correspondientes y se muestra una lista de mensajes.
-- Si todo está correcto, se muestra un mensaje de agradecimiento personalizado con el nombre del usuario.
-  
----
-
-![FormularioValidaciones](https://github.com/user-attachments/assets/faf7902e-e03c-4ad7-80ac-48cc069fa72c)
-
----
-
 
 # Portfolio Estudiantil - README
 
 ## Descripción
-Este proyecto es un portfolio estudiantil desarrollado en HTML, CSS (con Tailwind CSS) y JavaScript. Incluye una interfaz de usuario accesible y personalizable con funcionalidades modernas para mejorar la experiencia del usuario.
+Este proyecto es un portfolio estudiantil desarrollado en HTML, CSS (con Tailwind CSS) y JavaScript. Ofrece una interfaz accesible y personalizable con funcionalidades modernas para mejorar la experiencia del usuario, incluyendo un formulario de contacto con validaciones y retroalimentación.
 
 ## Características Implementadas
 
 ### 1. Modo Claro y Oscuro
-- **Descripción**: Se implementó un sistema de alternancia entre modo claro y oscuro para mejorar la legibilidad y adaptarse a las preferencias del usuario.
+- **Descripción**: Sistema de alternancia entre modo claro y oscuro para mejorar la legibilidad y adaptarse a las preferencias del usuario.
 - **Detalles**:
-  - Botones dedicados para cambiar entre modos (☀️ Claro / 🌙 Oscuro).
-  - Los colores de fondo, texto y componentes se ajustan dinámicamente según el modo seleccionado.
-  - Persistencia de la selección utilizando almacenamiento local (`localStorage`) para mantener la preferencia del usuario entre sesiones.
+  - Botones dedicados (☀️ Claro / 🌙 Oscuro) para cambiar entre modos.
+  - Ajuste dinámico de colores de fondo, texto, botones, navbar, footer y formulario.
+  - Paleta de colores optimizada para alto contraste y alineada con cada tema.
+  - Persistencia de la selección mediante `localStorage` para mantener la preferencia entre sesiones y páginas.
 
 ### 2. Modo Daltónico
-- **Descripción**: Se agregó un modo daltónico para mejorar la accesibilidad para personas con daltonismo.
+- **Descripción**: Modo para mejorar la accesibilidad para personas con daltonismo.
 - **Detalles**:
-  - Botón para activar/desactivar el modo daltónico, que ajusta los colores a una paleta optimizada para mejor contraste y diferenciación.
-  - La paleta de colores fue diseñada para ser compatible con diferentes tipos de daltonismo (protanopía, deuteranopía, tritanopía).
+  - Botón para activar/desactivar el modo, ajustando colores a una paleta optimizada para protanopía, deuteranopía y tritanopía.
+  - Colores diseñados para alto contraste y diferenciación, cumpliendo con estándares WCAG.
   - Persistencia de la selección mediante `localStorage`.
 
 ### 3. Ajuste de Tamaño de Letra
-- **Descripción**: Se incluyó una funcionalidad para aumentar o disminuir el tamaño de la fuente, mejorando la accesibilidad para usuarios con dificultades visuales.
+- **Descripción**: Funcionalidad para aumentar o disminuir el tamaño de la fuente, mejorando la accesibilidad.
 - **Detalles**:
   - Botones para incrementar (`+`) o decrementar (`-`) el tamaño de la fuente.
-  - Cambios aplicados dinámicamente al contenido de la página.
+  - Cambios aplicados dinámicamente a todo el contenido.
   - Persistencia del tamaño seleccionado mediante `localStorage`.
 
-### 4. Mejora de Colores para Cada Tema
-- **Descripción**: Se optimizaron las paletas de colores para cada modo (claro, oscuro y daltónico).
+### 4. Formulario de Contacto
+- **Descripción**: Formulario en `contacto.html` para que los visitantes dejen mensajes.
 - **Detalles**:
-  - En modo claro: Uso de tonos suaves y alto contraste para facilitar la lectura.
-  - En modo oscuro: Colores oscuros con tonos de texto claros para reducir la fatiga visual.
-  - En modo daltónico: Selección de colores con alto contraste y diferenciación para garantizar accesibilidad.
-  - Los colores fueron probados para cumplir con estándares de accesibilidad (WCAG).
+  - Campos: Nombre (`input type="text"`), Correo Electrónico (`input type="text"`), Asunto (`input type="text"`), Mensaje (`textarea`), Botón Enviar.
+  - Validaciones en `scripts/contacto.js`:
+    - Todos los campos son obligatorios.
+    - El email debe seguir un formato válido (ej: `usuario@dominio.com`).
+    - Retroalimentación: Campos con errores se marcan con la clase `.error` y se muestra una lista de mensajes. En caso de éxito, se muestra un mensaje personalizado con el nombre del usuario.
+  - Estilos en `estilos/styles.css` con la clase `.form-input` para inputs, y clases `.error`, `.error-text`, `.success` para retroalimentación visual.
+  - Adaptación de colores al modo claro, oscuro y daltónico.
 
-### 5. Persistencia de Configuraciones
-- **Descripción**: Todas las configuraciones del usuario (modo claro/oscuro, modo daltónico, tamaño de letra) se guardan en `localStorage`.
+### 5. Mejora de Colores para Cada Tema
+- **Descripción**: Optimización de paletas de colores para todos los modos.
 - **Detalles**:
-  - Al recargar la página, se aplican automáticamente las preferencias previas del usuario.
-  - Mejora la experiencia al mantener la consistencia entre sesiones.
+  - **Modo Claro**: Tonos suaves con alto contraste para facilitar la lectura.
+  - **Modo Oscuro**: Colores oscuros con texto claro para reducir fatiga visual.
+  - **Modo Daltónico**: Colores de alto contraste y diferenciación para accesibilidad.
+  - Estilos responsivos con pseudoclases como `:focus` para inputs del formulario.
+  - Cumplimiento con estándares de accesibilidad WCAG.
 
-### 6. Pruebas Manuales
-- **Descripción**: Se realizaron pruebas manuales exhaustivas para verificar el correcto funcionamiento de todas las funcionalidades.
+### 6. Persistencia de Configuraciones
+- **Descripción**: Configuraciones de modo claro/oscuro, modo daltónico y tamaño de letra se guardan en `localStorage`.
+- **Detalles**: Las preferencias se mantienen al recargar la página o navegar entre secciones, asegurando una experiencia consistente.
+
+### 7. Pruebas Manuales
+- **Descripción**: Pruebas exhaustivas para verificar el funcionamiento de todas las funcionalidades.
 - **Detalles**:
-  - **Modo Claro/Oscuro**: Verificación de cambios de colores en todos los elementos (fondo, texto, botones, navbar, footer).
-  - **Modo Daltónico**:  Verificación de cambios de colores en todos los elementos (fondo, texto, botones, navbar, footer).
-  - **Tamaño de Letra**: Comprobación de incrementos/decrementos en diferentes secciones de la página.
-  - **Persistencia**: Confirmación de que las configuraciones se mantienen tras navegar entre las páginas.
-  - **Compatibilidad**: Pruebas en diferentes navegadores (Chrome, Firefox) para asegurar consistencia.
+  - **Modo Claro/Oscuro y Daltónico**: Verificación de cambios de colores en todos los elementos (fondo, texto, botones, navbar, footer, formulario).
+  - **Tamaño de Letra**: Comprobación de incrementos/decrementos en todas las secciones.
+  - **Formulario**: Validación de campos, manejo de errores y mensajes de éxito.
+  - **Persistencia**: Confirmación de que las configuraciones se mantienen al navegar entre páginas.
+  - **Compatibilidad**: Pruebas en navegadores (Chrome, Firefox, Edge) para consistencia.
 
 ## Estructura del Proyecto
-- **index.html**: Página principal con controles de interfaz (modo claro/oscuro, tamaño de letra, modo daltónico) y contenido dinámico.
-- **estilos/styles.css**: Estilos personalizados complementados con Tailwind CSS.
-- **scripts/**:
-  - `dark_mode.js`: Lógica para el modo claro/oscuro.
-  - `tamano_letra.js`: Lógica para el ajuste de tamaño de fuente.
-  - `daltonismo.js`: Lógica para el modo daltónico.
+- **index.html**: Página principal con controles de interfaz y contenido dinámico.
 - **Páginas adicionales**: `avisos.html`, `sobre-mi.html`, `materias-2025.html`, `contacto.html`.
+- **estilos/styles.css**: Estilos personalizados con Tailwind CSS, incluyendo `.form-input`, `.error`, `.error-text`, `.success`.
+- **scripts/**:
+  - `dark_mode.js`: Lógica para modo claro/oscuro.
+  - `tamano_letra.js`: Lógica para ajuste de tamaño de fuente.
+  - `daltonismo.js`: Lógica para modo daltónico.
+  - `contacto.js`: Lógica de validación del formulario.
+- **Recursos**: Imagen de validaciones del formulario disponible en el repositorio.
+
+## Instalación y Uso
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/agustin-bergomi/Actividad1.git
+   ```
+2. Abre `index.html` en un navegador web.
+3. Usa los controles de interfaz para personalizar la experiencia y el formulario en `contacto.html` para enviar mensajes.
 
 ## Tecnologías Utilizadas
-- **HTML5**: Estructura de la página.
+- **HTML5**: Estructura de las páginas.
 - **Tailwind CSS**: Estilizado responsivo y moderno.
-- **JavaScript**: Lógica para funcionalidades dinámicas y persistencia.
-- **LocalStorage**: Almacenamiento de preferencias del usuario.
+- **CSS**: Estilos personalizados en `styles.css`.
+- **JavaScript**: Lógica para funcionalidades dinámicas y validaciones.
+- **LocalStorage**: Persistencia de preferencias del usuario.
+
+## Contribuciones
+¡Las contribuciones son bienvenidas! Crea un *issue* o *pull request* con tus sugerencias o mejoras.
 
 ## Autor
 Agustín Bergomi - 2025

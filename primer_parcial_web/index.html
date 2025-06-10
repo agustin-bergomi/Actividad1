@@ -4,44 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Portfolio Estudiantil</title>
-    <!-- Traigo Tailwind desde el CDN para estilos rapidos y responsivos -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Linkeo un CSS personalizado -->
     <link rel="stylesheet" href="estilos/styles.css">
 </head>
+
 <body class="flex flex-col min-h-screen bg-gray-100">
-
-<!-- CONTROLES DE INTERFAZ: FIJOS, DEBAJO DE LA NAVBAR -->
-<div class="fixed top-20 right-4 bg-white shadow-lg rounded-xl p-4 space-y-4 border border-gray-300 z-50">
-    <!-- Modo Claro/Oscuro -->
-    <div class="flex justify-between space-x-2">
-        <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-4 rounded">
-            ☀️ Claro
-        </button>
-        <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-4 rounded">
-            🌙 Oscuro
-        </button>
-    </div>
-
-    <!-- Tamaño de Letra -->
-    <div>
-        <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
-        <div class="flex justify-between space-x-2">
-            <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
-            <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
-        </div>
-    </div>
-
-    <!-- Modo Daltónico -->
-    <div class="text-center">
-        <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
-            Modo Daltónico: OFF
-        </button>
-    </div>
-</div>
-
-
-    <!-- Menu de navegacion -->
     <nav class="bg-black p-4">
         <ul class="flex justify-center space-x-6 text-white">
             <li><a href="index.html" class="hover:underline">Home</a></li>
@@ -52,62 +19,75 @@
         </ul>
     </nav>
 
-    <!-- Contenido principal -->
-    <main id="main-content" class="flex-grow p-6 text-center">
+    <main class="flex flex-col lg:flex-row flex-grow p-6 gap-6">
+        <aside class="w-full lg:w-1/6 bg-white shadow-md rounded-xl p-4 border border-gray-300 space-y-4">
+            <div class="flex justify-between space-x-2">
+                <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-3 rounded">
+                    ☀️ Claro
+                </button>
+                <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-3 rounded">
+                    🌙 Oscuro
+                </button>
+            </div>
+            <div>
+                <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
+                <div class="flex justify-between space-x-2">
+                    <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+                    <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
+                    Modo Daltónico: OFF
+                </button>
+            </div>
+        </aside>
+        <section id="main-content" class="w-full lg:w-5/6 text-center">
+            <br>
+            <h1 class="text-3xl font-bold mb-6">Bienvenido al Portfolio</h1>
+            <p class="mb-4 text-left max-w-2xl mx-auto">
+                En esta página encontrarás una tabla resumen con mis materias cursadas, estado y observaciones.
+            </p>
 
-        <h1 class="text-3xl font-bold mb-6">Home</h1>
-        <!-- Tabla con info de materias -->
-        <table class="table-auto mx-auto border-collapse border border-gray-300">
-            <thead>
-                <tr class="bg-white-200">
-                    <th class="border border-gray-300 p-2">Materia</th>
-                    <th class="border border-gray-300 p-2">Día y Horario</th>
-                    <th class="border border-gray-300 p-2">Modalidad</th>
-                    <th class="border border-gray-300 p-2">Aula</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="border border-gray-300 p-2">Diseño y Desarrollo Web</td>
-                    <td class="border border-gray-300 p-2">Lunes 18:30-20:30</td>
-                    <td class="border border-gray-300 p-2">Virtual</td>
-                    <td class="border border-gray-300 p-2">Virtual</td>
-                </tr>
-                <tr>
-                    <td class="border border-gray-300 p-2">Sistemas de informacion</td>
-                    <td class="border border-gray-300 p-2">Martes 18:30-20:30</td>
-                    <td class="border border-gray-300 p-2">Virtual</td>
-                    <td class="border border-gray-300 p-2">Virtual</td>
-                </tr>
-                <tr>
-                    <td class="border border-gray-300 p-2">Arquitectura de los computadores</td>
-                    <td class="border border-gray-300 p-2">Miercoles 18:30-20:30</td>
-                    <td class="border border-gray-300 p-2">Virtual</td>
-                    <td class="border border-gray-300 p-2">Virtual</td>
-                </tr>
-                <tr>
-                    <td class="border border-gray-300 p-2">Redes de computadoras</td>
-                    <td class="border border-gray-300 p-2">Jueves 18:30-20:30</td>
-                    <td class="border border-gray-300 p-2">Virtual</td>
-                    <td class="border border-gray-300 p-2">Virtual</td>
-                </tr>
-                <tr>
-                    <td class="border border-gray-300 p-2">Intro a la algoritmia</td>
-                    <td class="border border-gray-300 p-2">Viernes 18:30-20:30</td>
-                    <td class="border border-gray-300 p-2">Virtual</td>
-                    <td class="border border-gray-300 p-2">Virtual</td>
-                </tr>
-            </tbody>
-        </table>
+            <div class="overflow-x-auto">
+                    <table class="mx-auto table-auto border border-gray-300 text-left bg-white text-black w-full max-w-4xl">
+
+                    <thead class="bg-gray-600">
+                        <tr>
+                            <th class="px-4 py-2 border border-gray-300">Materia</th>
+                            <th class="px-4 py-2 border border-gray-300">Estado</th>
+                            <th class="px-4 py-2 border border-gray-300">Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-4 py-2 border border-gray-300">Diseño y Desarrollo Web</td>
+                            <td class="px-4 py-2 border border-gray-300">En curso</td>
+                            <td class="px-4 py-2 border border-gray-300">Primer parcial aprobado</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 border border-gray-300">Redes de Datos</td>
+                            <td class="px-4 py-2 border border-gray-300">En curso</td>
+                            <td class="px-4 py-2 border border-gray-300">Estudiar topologías</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2 border border-gray-300">Arquitectura de Computadoras</td>
+                            <td class="px-4 py-2 border border-gray-300">En curso</td>
+                            <td class="px-4 py-2 border border-gray-300">Próximo TP sobre binarios</td>
+                        </tr>
+                        <!-- Agregá más filas si tenías más contenido -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-black text-white text-center p-4">
         Agustín Bergomi 2025 - Derechos Reservados
     </footer>
+
     <script src="scripts/dark_mode.js" defer></script>
     <script src="scripts/tamano_letra.js" defer></script>
     <script src="scripts/daltonismo.js" defer></script>
-
 </body>
 </html>
