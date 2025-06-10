@@ -10,11 +10,25 @@
     <link rel="stylesheet" href="estilos/styles.css">
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
-            <!-- Selector de modo -->
-<div class="flex justify-end p-4 space-x-2">
-    <button onclick="setModo('claro')" class="modo-btn btn-claro">Modo Claro</button>
-    <button onclick="setModo('oscuro')" class="modo-btn btn-oscuro">Modo Oscuro</button>
-</div>
+
+<header>
+
+    <div class="p-4 text-right">
+        <div class="flex justify-end space-x-2">
+            <button onclick="setModo('claro')" class="modo-btn btn-claro">Modo Claro</button>
+            <button onclick="setModo('oscuro')" class="modo-btn btn-oscuro">Modo Oscuro</button>
+        </div>
+
+        <div class="mt-4">
+            <p class="text-sm font-medium mb-1">Tamaño de letra</p>
+            <div class="flex justify-end items-center space-x-2">
+                <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+                <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+            </div>
+        </div>
+    
+</header>
+
     <!-- Menu de navegacion -->
     <nav class="bg-black p-4">
         <ul class="flex justify-center space-x-6 text-white">
@@ -27,7 +41,10 @@
     </nav>
 
     <!-- Contenido principal -->
+    <main id="main-content" class="flex-grow p-6">
+
     <main class="flex-grow p-6">
+
         <h1 class="text-3xl font-bold mb-6 text-center">Diseño y Desarrollo Web</h1>
         <!-- Secciones para Fechas y Actividades -->
         <div class="flex flex-col md:flex-row gap-6 mb-6">
@@ -68,6 +85,7 @@
         Curso: 16872 / Profesora: Patricia Litovicius
     </footer>
     <script src="scripts/dark_mode.js" defer></script>
+    <script src="scripts/tamano_letra.js" defer></script>
 
 </body>
 </html>

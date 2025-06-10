@@ -7,13 +7,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="estilos/styles.css">
 </head>
-<body class="flex flex-col min-h-screen bg-gray-100">
-        <!-- Selector de modo -->
-<div class="flex justify-end p-4 space-x-2">
-    <button onclick="setModo('claro')" class="modo-btn btn-claro">Modo Claro</button>
-    <button onclick="setModo('oscuro')" class="modo-btn btn-oscuro">Modo Oscuro</button>
-</div>
-    <!-- Menu de navegacion -->
+
+
+<body class="flex flex-col min-h-screen bg-gray-800">
+    <!-- Encabezado y configuraciones -->
+    <header class="bg-gray-800 p-4 flex flex-col items-end space-y-4">
+        <!-- Botones de modo claro/oscuro -->
+        <div class="space-x-2">
+            <button onclick="setModo('claro')" class="modo-btn btn-claro border border-gray-400 bg-white text-black px-4 py-2 rounded shadow hover:bg-gray-200">☀️ Claro</button>
+            <button onclick="setModo('oscuro')" class="modo-btn btn-oscuro border border-gray-400 bg-gray-800 text-white px-4 py-2 rounded shadow hover:bg-gray-700">🌙 Oscuro</button>
+        </div>
+    
+        <!-- Control de tamaño de fuente -->
+        <div class="text-right">
+            <p class="text-sm font-medium mb-2">Tamaño de fuente</p>
+            <div class="flex justify-end space-x-2">
+                <button id="decrease-font" class="border border-gray-400 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+                <button id="increase-font" class="border border-gray-400 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- Menú de navegación -->
     <nav class="bg-black p-4">
         <ul class="flex justify-center space-x-6 text-white">
             <li><a href="index.html" class="hover:underline">Home</a></li>
@@ -25,26 +41,27 @@
     </nav>
 
     <!-- Contenido principal -->
-    <main class="flex-grow p-6 text-center">
-        <h1 class="text-3xl font-bold mb-6">Contacto</h1>
-        <!-- Formulario de contacto -->
+    <main id="main-content" class="flex-grow p-6">
+        <h1 class="text-3xl font-bold mb-6 text-center">Contacto</h1>
+
+        <!-- Formulario -->
         <div class="max-w-md mx-auto">
             <form id="contactoForm">
                 <div class="mb-4">
                     <label for="nombre" class="block text-left">Nombre:</label>
-                    <input type="text" id="nombre" class="form-input">
+                    <input type="text" id="nombre" class="form-input w-full">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-left">Correo Electrónico:</label>
-                    <input type="email" id="email" class="form-input">
+                    <input type="email" id="email" class="form-input w-full">
                 </div>
                 <div class="mb-4">
                     <label for="asunto" class="block text-left">Asunto:</label>
-                    <input type="text" id="asunto" class="form-input">
+                    <input type="text" id="asunto" class="form-input w-full">
                 </div>
                 <div class="mb-4">
                     <label for="mensajeTexto" class="block text-left">Mensaje:</label>
-                    <textarea id="mensajeTexto" class="form-input" rows="4"></textarea>
+                    <textarea id="mensajeTexto" class="form-input w-full" rows="4"></textarea>
                 </div>
                 <button type="submit" class="text-white p-2 rounded bg-gray-600 hover:bg-gray-700">Enviar</button>
             </form>
@@ -57,8 +74,10 @@
         Agustín Bergomi 2025 - Derechos Reservados
     </footer>
 
+
     <script src="scripts/contacto.js" defer></script>
     <script src="scripts/dark_mode.js"></script>
+    <script src="scripts/tamano_letra.js" defer></script>
 
 </body>
 </html>

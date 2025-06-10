@@ -13,10 +13,21 @@
 
 <body class="flex flex-col min-h-screen bg-gray-100">
         <!-- Selector de modo -->
-<div class="flex justify-end p-4 space-x-2">
-    <button onclick="setModo('claro')" class="modo-btn btn-claro">Modo Claro</button>
-    <button onclick="setModo('oscuro')" class="modo-btn btn-oscuro">Modo Oscuro</button>
-</div>
+        <!-- Selector de modo -->
+        <div class="p-4 text-right">
+            <div class="flex justify-end space-x-2">
+                <button onclick="setModo('claro')" class="modo-btn btn-claro">Modo Claro</button>
+                <button onclick="setModo('oscuro')" class="modo-btn btn-oscuro">Modo Oscuro</button>
+            </div>
+    
+            <div class="mt-4">
+                <p class="text-sm font-medium mb-1">Tamaño de letra</p>
+                <div class="flex justify-end items-center space-x-2">
+                    <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+                    <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+                </div>
+            </div>
+        </div>
     <!-- Menu de navegacion -->
     <nav class="bg-black p-4">
         <ul class="flex justify-center space-x-6 text-white">
@@ -29,7 +40,7 @@
     </nav>
 
     <!-- Contenido principal -->
-    <main class="flex-grow p-6 text-center">
+    <main id="main-content" class="flex-grow p-6 text-center">
         <h1 class="text-3xl font-bold mb-6">Sobre mí</h1>
         <!-- Presentacion personal -->
         <img src="img/profile.jpg" alt="Mi foto" class="w-48 h-48 rounded-full mx-auto mb-4">
@@ -48,6 +59,7 @@
         Agustín Bergomi 2025 - Derechos Reservados
     </footer>
     <script src="scripts/dark_mode.js" defer></script>
+    <script src="scripts/tamano_letra.js" defer></script>
 
 </body>
 </html>
