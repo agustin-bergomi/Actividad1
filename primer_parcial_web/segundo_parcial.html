@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Estudiantil - Informe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="estilos/styles.css">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <nav class="bg-black p-4">
+        <ul class="flex justify-center space-x-6 text-white">
+            <li><a href="index.html" class="hover:underline">Home</a></li>
+            <li><a href="avisos.html" class="hover:underline">Avisos</a></li>
+            <li><a href="sobre-mi.html" class="hover:underline">Sobre mí</a></li>
+            <li><a href="materias-2025.html" class="hover:underline">Materias 2025</a></li>
+            <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+            <li><a href="segundo_parcial.html" class="hover:underline">Segundo Parcial</a></li>
+            <li><a href="actividades.html" class="hover:underline">Actividades</a></li>
+        </ul>
+    </nav>
+    <main class="flex flex-col lg:flex-row flex-grow p-6 gap-6">
+        <aside class="w-full lg:w-1/6 bg-white shadow-md rounded-xl p-4 border border-gray-300 space-y-4">
+            <div class="flex justify-between space-x-2">
+                <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-3 rounded">
+                    ☀️ Claro
+                </button>
+                <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-3 rounded">
+                    🌙 Oscuro
+                </button>
+            </div>
+            <div>
+                <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
+                <div class="flex justify-between space-x-2">
+                    <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+                    <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
+                    Modo Daltónico: OFF
+                </button>
+            </div>
+        </aside>
+        <section id="main-content" class="w-full lg:w-5/6">
+            <br><h1 class="text-3xl font-bold mb-6 text-center">Informe de Mejoras - Segunda Evaluacion Parcial</h1>
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl font-semibold mb-4">1. Mejoras realizadas respecto a la primera entrega</h2>
+                <p class="mb-4">En esta segunda entrega se incorporaron importantes mejoras de accesibilidad y experiencia de usuario:</p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li><strong>Modo claro/oscuro persistente:</strong> Se implementó un sistema que permite alternar entre modo claro y modo oscuro. La preferencia seleccionada por el usuario se guarda en localStorage, y se aplica automáticamente al ingresar a cualquier página del sitio, asegurando coherencia visual.</li>
+                    <li><strong>Tamaño de letra personalizable y persistente:</strong> Se agregaron controles para aumentar o disminuir el tamaño de fuente del contenido principal. El tamaño elegido también se guarda en localStorage, de modo que se mantiene constante entre páginas y visitas posteriores.</li>
+                    <li><strong>Modo daltónico persistente:</strong> Se incorporó un botón que activa un esquema de colores optimizado para personas con daltonismo, reemplazando colores problemáticos por alternativas más visibles. Esta preferencia también se guarda y se aplica en todo el sitio.</li>
+                    <li><strong>Unificación visual:</strong> Se reemplazaron los controles flotantes por un panel lateral de accesibilidad presente en todas las páginas, lo que mejora la coherencia, la visibilidad de las funciones de accesibilidad y la usabilidad general.</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold mb-4">2. Accesibilidad – Resultados con Lighthouse</h2>
+                <p class="mb-4">A continuación, se detalla el análisis de accesibilidad utilizando Google Lighthouse, herramienta integrada en el navegador Google Chrome:</p>
+                <p class="mb-2"><strong>✅ Resultados generales por página:</strong></p>
+                <table class="w-full border-collapse border border-gray-300 mb-4">
+                    <thead>
+                        <tr class="bg-gray-500">
+                            <th class="border border-gray-300 p-2">Página</th>
+                            <th class="border border-gray-300 p-2">Accesibilidad</th>
+                            <th class="border border-gray-300 p-2">Performance</th>
+                            <th class="border border-gray-300 p-2">Best Practices</th>
+                            <th class="border border-gray-300 p-2">SEO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 p-2">index.html</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">90</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">avisos.html</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">90</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">materias-2025.html</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">90</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">sobre-mi.html</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">96</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">91</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 p-2">contacto.html</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">100</td>
+                            <td class="border border-gray-300 p-2">90</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="mb-2"><strong>📷 Capturas incluidas:</strong></p>
+                <div class="grid grid-cols-1 sm:grid-cols-1 gap-4 mb-4">
+                    <img src="img/lighthouse-index.png" alt="Captura de pantalla de Lighthouse para index.html" width="800" height="600" loading="lazy" class="border border-gray-300 rounded">
+                    <img src="img/lighthouse-avisos.png" alt="Captura de pantalla de Lighthouse para avisos.html" width="800" height="600" loading="lazy" class="border border-gray-300 rounded">
+                    <img src="img/lighthouse-materias.png" alt="Captura de pantalla de Lighthouse para materias-2025.html" width="800" height="600" loading="lazy" class="border border-gray-300 rounded">
+                    <img src="img/lighthouse-sobremi.png" alt="Captura de pantalla de Lighthouse para sobre-mi.html" width="800" height="600" loading="lazy" class="border border-gray-300 rounded">
+                    <img src="img/lighthouse-contacto.png" alt="Captura de pantalla de Lighthouse para contacto.html" width="800" height="600" loading="lazy" class="border border-gray-300 rounded">
+                </div>                <p class="mb-4">Las puntuaciones demuestran un trabajo sobresaliente en:</p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li>Uso correcto de etiquetas semánticas (&lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, etc.)</li>
+                    <li>Contraste adecuado en modo oscuro y daltónico.</li>
+                    <li>Navegación clara y coherente.</li>
+                    <li>Formularios accesibles con label asociados a cada input.</li>
+                    <li>Controles persistentes de accesibilidad (modo visual y tamaño de letra).</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold mb-4">3. Uso de JavaScript / jQuery</h2>
+                <p class="mb-4">Se usaron cuatro archivos JavaScript, cada uno cumpliendo una función clara:</p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li><strong>dark_mode.js</strong>
+                        <ul class="list-circle pl-6">
+                            <li>Función <code>setModo(modo)</code>: Cambia entre modo claro y oscuro alterando clases en &lt;body&gt;.</li>
+                            <li>Guarda la elección en localStorage (modo), y la aplica automáticamente al recargar o navegar el sitio.</li>
+                        </ul>
+                    </li>
+                    <li><strong>tamano_letra.js</strong>
+                        <ul class="list-circle pl-6">
+                            <li>Permite aumentar/disminuir el tamaño de fuente del contenido mediante dos botones.</li>
+                            <li>Guarda el tamaño seleccionado en localStorage (preferredFontSize) y lo aplica al cargar cada página.</li>
+                            <li>Asegura un mínimo y máximo de tamaño para mantener la legibilidad.</li>
+                        </ul>
+                    </li>
+                    <li><strong>daltonismo.js</strong>
+                        <ul class="list-circle pl-6">
+                            <li>Función <code>setModoDaltonico()</code>: Alterna el modo daltónico aplicando la clase daltonico al &lt;body&gt;.</li>
+                            <li>Actualiza el texto del botón de activación.</li>
+                            <li>Se guarda en localStorage y se aplica automáticamente al cargar.</li>
+                        </ul>
+                    </li>
+                    <li><strong>contacto.js</strong>
+                        <ul class="list-circle pl-6">
+                            <li>Valida el formulario de contacto al enviarlo.</li>
+                            <li>Verifica que el nombre, email, asunto y mensaje estén completos y correctos.</li>
+                            <li>Si hay errores, marca los campos con clases CSS y muestra mensajes.</li>
+                            <li>Si todo está correcto, muestra un mensaje de agradecimiento personalizado sin enviar el formulario.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold mb-4">4. Accesibilidad y usabilidad según Nielsen</h2>
+                <p class="mb-4"><strong>Principios de usabilidad aplicados (Nielsen):</strong></p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li><strong>Visibilidad del estado del sistema:</strong> El modo activo (oscuro, claro, daltónico) y el tamaño de letra se reflejan visualmente de forma inmediata.</li>
+                    <li><strong>Control del usuario:</strong> El usuario puede elegir el modo de visualización y el tamaño de fuente según su necesidad, y estos cambios persisten.</li>
+                    <li><strong>Consistencia y estándares:</strong> Los mismos botones, ubicaciones y estilos se aplican en todas las páginas.</li>
+                    <li><strong>Prevención de errores:</strong> El formulario de contacto tiene validaciones claras, evita el envío con datos incompletos y muestra mensajes orientativos.</li>
+                    <li><strong>Diseño estético y minimalista:</strong> El panel lateral concentra las funciones principales de accesibilidad sin sobrecargar la interfaz.</li>
+                </ul>
+                <p class="mb-4"><strong>Estrategias específicas de accesibilidad:</strong></p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li>Implementación de modo daltónico con contraste reforzado y colores seguros.</li>
+                    <li>Botones con texto y emojis para facilitar el reconocimiento visual.</li>
+                    <li>Ajuste de tamaño de letra para facilitar la lectura a personas con dificultades visuales.</li>
+                    <li>Estructura semántica clara (&lt;main&gt;, &lt;section&gt;, &lt;aside&gt;, etc.).</li>
+                    <li>Formularios con etiquetas asociadas a cada campo (&lt;label for="..."&gt;).</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold mb-4">5. Publicación del sitio</h2>
+                <p class="mb-4"><strong>Obtener un dominio personalizado desde donweb.com:</strong></p>
+                <ul class="list-disc pl-6 mb-4">
+
+                    <li>Accedé a <a href="https://donweb.com/es-ar/" class="text-blue-600 hover:underline">https://donweb.com/es-ar/</a>.</li>
+                    <li>Registrarse.</li>
+                    <li>Ingresr un nombre de dominio disponible (por ejemplo, portfolioagustin.com).</li>
+                    <li>Pagar el registro anual mediante tarjeta o billetera digital.</li>
+                </ul>
+                <p class="mb-4"><strong>Asociar el dominio a un sitio en Netlify:</strong></p>
+                <ul class="list-disc pl-6 mb-4">
+                  Para obtener un hosting gratuito me registraria en https://www.infinityfree.com/ y utilizaria ese servicio ya que lo he utilizado 
+                  y es confiable y de buena calidad. Es facil de usar y admite incluso usar archivos PHP.
+                  La mayoria de los hosting gratuitos ofrecen una direccion con subdominio por ejemplo, holacomova.infinityfree.com/agustinportafolio.com 
+                  lo cual no luce profesional.
+                  En general se puede vincular un dominio ya registrado al hosting gratuito si se paga el hosting.
+                  <br><br>
+                  Los pasos para subir desplegar el sitio son bastante simples:
+                    <li>Regisrarse en https://www.infinityfree.com/.</li>
+                    <li>Subir los archivos de la pagina</li>
+                    <li>Elegir un dominio (aunque si es gratuito sera algo asi como "https://www.holacomova.infinityfree.com/agustinportafolio.com".</li>
+                    <li>Esperar la propagación (puede demorar hasta 24hs).</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-black text-white text-center p-4">
+        Agustín Bergomi 2025 - Derechos Reservados
+    </footer>
+    <script src="scripts/dark_mode.js" defer></script>
+    <script src="scripts/tamano_letra.js" defer></script>
+    <script src="scripts/daltonismo.js" defer></script>
+</body>
+</html>
