@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades - Portfolio Estudiantil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="estilos/styles.css">
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <nav class="bg-black p-4">
+        <ul class="flex justify-center space-x-6 text-white">
+            <li><a href="index.html" class="hover:underline">Home</a></li>
+            <li><a href="avisos.html" class="hover:underline">Avisos</a></li>
+            <li><a href="sobre-mi.html" class="hover:underline">Sobre mí</a></li>
+            <li><a href="materias-2025.html" class="hover:underline">Materias 2025</a></li>
+            <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+            <li><a href="segundo_parcial.html" class="hover:underline">Segundo Parcial</a></li>
+            <li><a href="actividades.html" class="hover:underline">Actividades</a></li>
+        </ul>
+    </nav>
+    <main class="flex flex-col lg:flex-row flex-grow p-6 gap-6">
+        <aside class="w-full lg:w-1/6 bg-white shadow-md rounded-xl p-4 border border-gray-300 space-y-4">
+            <div class="flex justify-between space-x-2">
+                <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-3 rounded">
+                    ☀️ Claro
+                </button>
+                <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-3 rounded">
+                    🌙 Oscuro
+                </button>
+            </div>
+            <div>
+                <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
+                <div class="flex justify-between space-x-2">
+                    <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+                    <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
+                    Modo Daltónico: OFF
+                </button>
+            </div>
+        </aside>
+        <section id="main-content" class="w-full lg:w-5/6">
+            <br><h1 class="text-3xl font-bold mb-6 text-center">Actividades Realizadas</h1>
+            <div class="max-w-3xl mx-auto">
+                <ul class="list-disc pl-6 mb-4">
+                    <li><strong>Actividad 1</strong><br>
+                        Ejercicio individual: HTML - Introducción 📝<br>
+                        Presentación personal<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/index.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Actividad 2</strong><br>
+                        Ejercicio individual: HTML - Etiquetas 📝<br>
+                        Página Desarrollo Web<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/desarrollo.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Actividad 3</strong><br>
+                        Ejercicio individual: Ejercicio integrador (Entrega obligatoria) 📝<br>
+                        Sitio personal con varias páginas<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/actividad3/index.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Actividad 4</strong><br>
+                        Ejercicio individual: Formato de texto 📝<br>
+                        Star Wars - CSS<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/starwars_act4/index.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Actividad 5</strong><br>
+                        Ejercicio individual: Formato de cajas 📝<br>
+                        Gimnasio<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/gimnasio/gimnasio.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Actividad 6</strong><br>
+                        Ejercicio individual: Unidades de medida 📝<br>
+                        Cantina Chichilo<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/chichilo/index.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Actividad 7</strong><br>
+                        Ejercicio individual: Grid y Flexbox 📝<br>
+                        Galería de imágenes<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/grid/imagenes.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Actividad 8</strong><br>
+                        Ejercicio individual: JavaScript 📝<br>
+                        Alert y calcular días usuario<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/ejercicio_javascript/variables_fijas.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Actividad 9</strong><br>
+                        Ejercicio individual: Práctica Formulario Javascript sitio Individual personal obligatorio (realizado para el parcial) 📝<br>
+                        Validación Formulario<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/primer_parcial_web/contacto.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Actividad 10</strong><br>
+                        Ejercicio individual: Modo claro y oscuro 📝<br>
+                        Modo Claro Oscuro persistente<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/primer_parcial_web/index.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Actividad 11</strong><br>
+                        Trabajo práctico obligatorio UVA 2 (obligatoria)<br>
+                        TP Obligatorio<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/tp_oglig/index.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Primer Parcial</strong><br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/primer_parcial_web/index.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                    <br>
+                    <li><strong>Segundo Parcial</strong><br>
+                        Mejoras Sitio Personal<br>
+                        <a href="https://agustin-bergomi.github.io/Actividad1/primer_parcial_web/index.html" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Ver actividad</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-black text-white text-center p-4">
+        Agustín Bergomi 2025 - Derechos Reservados
+    </footer>
+    <script src="scripts/dark_mode.js" defer></script>
+    <script src="scripts/tamano_letra.js" defer></script>
+    <script src="scripts/daltonismo.js" defer></script>
+</body>
+</html>
