@@ -1,110 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño y Desarrollo Web - Portfolio Estudiantil</title>
-    <!-- Traigo Tailwind desde el CDN para estilos rapidos y responsivos -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Linkeo un CSS personalizado -->
-    <link rel="stylesheet" href="estilos/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diseño y Desarrollo Web - Portfolio Estudiantil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="estilos/styles.css" />
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
 
-<header>
+  <!-- Navbar -->
+  <nav class="bg-black p-4">
+    <ul class="flex flex-wrap justify-center space-x-4 text-white text-sm sm:text-base overflow-x-auto">
+      <li><a href="index.html" class="hover:underline whitespace-nowrap">Home</a></li>
+      <li><a href="avisos.html" class="hover:underline whitespace-nowrap">Avisos</a></li>
+      <li><a href="sobre-mi.html" class="hover:underline whitespace-nowrap">Sobre mí</a></li>
+      <li><a href="materias-2025.html" class="hover:underline whitespace-nowrap">Materias 2025</a></li>
+      <li><a href="contacto.html" class="hover:underline whitespace-nowrap">Contacto</a></li>
+      <li><a href="segundo_parcial.html" class="hover:underline whitespace-nowrap">Segundo Parcial</a></li>
+      <li><a href="actividades.html" class="hover:underline whitespace-nowrap">Actividades</a></li>
+    </ul>
+  </nav>
 
-<!-- CONTROLES DE INTERFAZ: FIJOS, DEBAJO DE LA NAVBAR -->
-<div class="fixed top-20 right-4 bg-white shadow-lg rounded-xl p-4 space-y-4 border border-gray-300 z-50">
-    <!-- Modo Claro/Oscuro -->
-    <div class="flex justify-between space-x-2">
-        <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-4 rounded">
-            ☀️ Claro
-        </button>
-        <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-4 rounded">
-            🌙 Oscuro
-        </button>
-    </div>
-
-    <!-- Tamaño de Letra -->
-    <div>
-        <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
-        <div class="flex justify-between space-x-2">
-            <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
-            <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
-        </div>
-    </div>
-
-    <!-- Modo Daltónico -->
-    <div class="text-center">
-        <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
-            Modo Daltónico: OFF
-        </button>
-    </div>
-</div>
-
+  <!-- Layout principal con panel izquierdo y contenido -->
+  <main class="flex flex-col lg:flex-row flex-grow p-6 gap-6">
     
-</header>
+    <!-- Panel izquierdo -->
+    <aside class="w-full lg:w-1/5 bg-white shadow-md rounded-xl p-4 border border-gray-300 space-y-4">
+      <!-- Modo claro / oscuro -->
+      <div class="flex justify-center">
+        <div class="inline-flex gap-1">
+          <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-3 rounded">☀️ Claro</button>
+          <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-3 rounded">🌙 Oscuro</button>
+        </div>
+      </div>
 
-    <!-- Menu de navegacion -->
-    <nav class="bg-black p-4">
-        <ul class="flex justify-center space-x-6 text-white">
-            <li><a href="index.html" class="hover:underline">Home</a></li>
-            <li><a href="avisos.html" class="hover:underline">Avisos</a></li>
-            <li><a href="sobre-mi.html" class="hover:underline">Sobre mí</a></li>
-            <li><a href="materias-2025.html" class="hover:underline">Materias 2025</a></li>
-            <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
-            <li><a href="segundo_parcial.html" class="hover:underline">Segundo Parcial</a></li>
-            <li><a href="actividades.html" class="hover:underline">Actividades</a></li>
-        </ul>
-    </nav>
+      <!-- Tamaño de letra -->
+      <div class="flex flex-col items-center space-y-1">
+        <p class="text-sm font-semibold">Tamaño de letra</p>
+        <div class="inline-flex gap-1">
+          <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+          <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+        </div>
+      </div>
+
+      <!-- Modo Daltónico -->
+      <div class="text-center">
+        <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
+          Modo Daltónico: OFF
+        </button>
+      </div>
+    </aside>
 
     <!-- Contenido principal -->
-    <main id="main-content" class="flex-grow p-6">
+    <section id="main-content" class="w-full lg:w-4/5 px-4">
+      <br><h1 class="text-3xl font-bold mb-6 text-center">Diseño y Desarrollo Web</h1>
 
-    <main class="flex-grow p-6">
-
-        <h1 class="text-3xl font-bold mb-6 text-center">Diseño y Desarrollo Web</h1>
-        <!-- Secciones para Fechas y Actividades -->
-        <div class="flex flex-col md:flex-row gap-6 mb-6">
-            <!-- Fechas de examenes -->
-            <section class="flex-1 bg-white p-4 rounded shadow">
-                <h2 class="text-xl font-semibold mb-4">Fechas de exámenes</h2>
-                <ul class="list-disc list-inside">
-                    <li>Parcial 1: 15/05/2025</li>
-                    <li>Parcial 2: 20/06/2025</li>
-                    <li>Final: 10/07/2025</li>
-                </ul>
-            </section>
-            <!-- Actividades UVAs -->
-            <section class="flex-1 bg-white p-4 rounded shadow">
-                <h2 class="text-xl font-semibold mb-4">Actividades UVAs</h2>
-                <ul class="list-disc list-inside">
-                    <li><a href="../actividad3/sobre_mi.html" target="_blank" class="hover:underline">UVA 1</a></li>
-                    <li><a href="../desarrollo.html" target="_blank" class="hover:underline">UVA 2</a></li>
-                </ul>
-            </section>
-        </div>
-        <!-- Bibliografia ancho completo -->
-        <section class="bg-white p-4 rounded shadow">
-            <h2 class="text-xl font-semibold mb-4">Bibliografía</h2>
-            <li><strong>Diseño de páginas Web</strong> - Autor: Jack Davis</li>
-            <li><strong>Diseño web con CSS</strong> - Autor: Ralph G. Schulz</li>
-            <br>
-            <li><a href="https://www.w3.org/" target="_blank">https://www.w3.org/</a></li>
-            <li><a href="https://www.pdf-manual.es/programacion-web/html/70-creacion-de-paginas-web-en-html.html" target="_blank">PDF Manual</a></li>
-            <li><a href="https://html-now.github.io/" target="_blank">https://html-now.github.io/</a></li>
-            <li><a href="https://www.w3schools.com/" target="_blank">https://www.w3schools.com/</a></li>
-            <li>Recursos adicionales disponibles en el campus virtual.</li>
+      <div class="flex flex-col md:flex-row gap-6 mb-6">
+        <!-- Fechas -->
+        <section class="flex-1 bg-white p-4 rounded shadow">
+          <h2 class="text-xl font-semibold mb-4">Fechas de exámenes</h2>
+          <ul class="list-disc list-inside">
+            <li>Parcial 1: 15/05/2025</li>
+            <li>Parcial 2: 20/06/2025</li>
+            <li>Final: 10/07/2025</li>
+          </ul>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white text-center p-4">
-        Curso: 16872 / Profesora: Patricia Litovicius
-    </footer>
-    <script src="scripts/dark_mode.js" defer></script>
-    <script src="scripts/tamano_letra.js" defer></script>
-    <script src="scripts/daltonismo.js" defer></script>
+        <!-- UVAs -->
+        <section class="flex-1 bg-white p-4 rounded shadow">
+          <h2 class="text-xl font-semibold mb-4">Actividades UVAs</h2>
+          <ul class="list-disc list-inside">
+            <li><a href="../actividad3/sobre_mi.html" target="_blank" class="hover:underline">UVA 1</a></li>
+            <li><a href="../desarrollo.html" target="_blank" class="hover:underline">UVA 2</a></li>
+          </ul>
+        </section>
+      </div>
 
+      <!-- Bibliografía -->
+      <section class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-4">Bibliografía</h2>
+        <ul class="list-disc list-inside">
+          <li><strong>Diseño de páginas Web</strong> - Jack Davis</li>
+          <li><strong>Diseño web con CSS</strong> - Ralph G. Schulz</li>
+          <li><a href="https://www.w3.org/" target="_blank">https://www.w3.org/</a></li>
+          <li><a href="https://www.pdf-manual.es/programacion-web/html/70-creacion-de-paginas-web-en-html.html" target="_blank">PDF Manual</a></li>
+          <li><a href="https://html-now.github.io/" target="_blank">https://html-now.github.io/</a></li>
+          <li><a href="https://www.w3schools.com/" target="_blank">https://www.w3schools.com/</a></li>
+          <li>Recursos adicionales disponibles en el campus virtual.</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-4">
+    Agustín Bergomi 2025 - Derechos Reservados
+  </footer>
+
+  <script src="scripts/dark_mode.js" defer></script>
+  <script src="scripts/tamano_letra.js" defer></script>
+  <script src="scripts/daltonismo.js" defer></script>
 </body>
 </html>

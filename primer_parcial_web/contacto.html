@@ -12,34 +12,42 @@
 
     <!-- Menú de navegación -->
     <nav class="bg-black p-4">
-        <ul class="flex justify-center space-x-6 text-white">
-            <li><a href="index.html" class="hover:underline">Home</a></li>
-            <li><a href="avisos.html" class="hover:underline">Avisos</a></li>
-            <li><a href="sobre-mi.html" class="hover:underline">Sobre mí</a></li>
-            <li><a href="materias-2025.html" class="hover:underline">Materias 2025</a></li>
-            <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
-            <li><a href="segundo_parcial.html" class="hover:underline">Segundo Parcial</a></li>
-            <li><a href="actividades.html" class="hover:underline">Actividades</a></li>
+        <ul class="flex flex-wrap justify-center space-x-4 text-white text-sm sm:text-base overflow-x-auto">
+          <li><a href="index.html" class="hover:underline whitespace-nowrap">Home</a></li>
+          <li><a href="avisos.html" class="hover:underline whitespace-nowrap">Avisos</a></li>
+          <li><a href="sobre-mi.html" class="hover:underline whitespace-nowrap">Sobre mí</a></li>
+          <li><a href="materias-2025.html" class="hover:underline whitespace-nowrap">Materias 2025</a></li>
+          <li><a href="contacto.html" class="hover:underline whitespace-nowrap">Contacto</a></li>
+          <li><a href="segundo_parcial.html" class="hover:underline whitespace-nowrap">Segundo Parcial</a></li>
+          <li><a href="actividades.html" class="hover:underline whitespace-nowrap">Actividades</a></li>
         </ul>
-    </nav>
+      </nav>
+      
 
     <main class="flex flex-col lg:flex-row flex-grow p-6 gap-6">
         <!-- Panel lateral de accesibilidad -->
         <aside class="w-full lg:w-1/6 bg-white shadow-md rounded-xl p-4 border border-gray-300 space-y-4">
-            <div class="flex justify-between space-x-2">
-                <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-3 rounded">
+
+            <div class="flex justify-center">
+                <div class="inline-flex gap-1">
+                  <button onclick="setModo('claro')" class="modo-btn bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-1 px-3 rounded">
                     ☀️ Claro
-                </button>
-                <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-3 rounded">
+                  </button>
+                  <button onclick="setModo('oscuro')" class="modo-btn bg-gray-800 hover:bg-gray-700 text-white font-medium py-1 px-3 rounded">
                     🌙 Oscuro
-                </button>
-            </div>
-            <div>
-                <p class="text-sm font-semibold mb-1">Tamaño de letra</p>
-                <div class="flex justify-between space-x-2">
-                    <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
-                    <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+                  </button>
                 </div>
+              </div>
+              
+            <div>
+                <div class="flex flex-col items-center space-y-1">
+                    <p class="text-sm font-semibold">Tamaño de letra</p>
+                    <div class="inline-flex gap-1">
+                      <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
+                      <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
+                    </div>
+                  </div>
+                  
             </div>
             <div class="text-center">
                 <button id="btn-daltonico" onclick="setModoDaltonico()" class="w-full bg-blue-100 hover:bg-blue-200 text-black font-medium py-1 px-3 rounded border border-gray-400">
@@ -49,7 +57,7 @@
         </aside>
 
         <!-- Contenido principal -->
-        <section id="main-content" class="w-full lg:w-5/6">
+        <section id="main-content" class="w-full lg:w-5/6 px-4">
             <br><h1 class="text-3xl font-bold mb-6 text-center">Contacto</h1>
 
             <!-- Formulario -->
