@@ -13,7 +13,6 @@
 
 <body class="flex flex-col min-h-screen bg-gray-100">
         <!-- Selector de modo -->
-        <!-- Selector de modo -->
         <div class="p-4 text-right">
             <div class="flex justify-end space-x-2">
                 <button onclick="setModo('claro')" class="modo-btn btn-claro">Modo Claro</button>
@@ -26,8 +25,13 @@
                     <button id="decrease-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">-</button>
                     <button id="increase-font" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded">+</button>
                 </div>
+            </div><br>
+            <button id="btn-daltonico" onclick="setModoDaltonico()" class="border border-gray-400 bg-blue-200 text-black px-4 py-2 rounded shadow hover:bg-blue-300">
+                Modo Daltónico: OFF
+            </button>
             </div>
         </div>
+    </div><br>
     <!-- Menu de navegacion -->
     <nav class="bg-black p-4">
         <ul class="flex justify-center space-x-6 text-white">
@@ -41,6 +45,9 @@
 
     <!-- Contenido principal -->
     <main id="main-content" class="flex-grow p-6 text-center">
+                <!-- Selector de modo -->
+
+        </div>
         <h1 class="text-3xl font-bold mb-6">Sobre mí</h1>
         <!-- Presentacion personal -->
         <img src="img/profile.jpg" alt="Mi foto" class="w-48 h-48 rounded-full mx-auto mb-4">
@@ -60,6 +67,7 @@
     </footer>
     <script src="scripts/dark_mode.js" defer></script>
     <script src="scripts/tamano_letra.js" defer></script>
+    <script src="scripts/daltonismo.js" defer></script>
 
 </body>
 </html>

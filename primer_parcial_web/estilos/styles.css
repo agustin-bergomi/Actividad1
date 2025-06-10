@@ -162,3 +162,25 @@ body.bg-gray-900 a:hover {
 body.bg-gray-900 .shadow {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
+
+.daltonico {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  .daltonico nav,
+  .daltonico footer {
+    background-color: #004488 !important;
+    color: #ffff00 !important;
+  }
+  
+  .daltonico a {
+    color: #0066cc !important;
+  }
+  
+  .daltonico button {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+  }
+  
