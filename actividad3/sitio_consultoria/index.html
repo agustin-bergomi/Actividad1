@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría en Tecnología</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e6f0fa 0%, #d0e1ff 100%);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1a3c6d 0%, #2e5cb8 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(26,60,109,0.9), rgba(46,92,184,0.7)), url('https://images.unsplash.com/photo-1516321318423-ffd94a9d0f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 0 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ffd700, #ffaa00);
+            color: #1a3c6d;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .home h2, .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(to right, #1a3c6d, #2e5cb8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+
+        .service-card h3 {
+            color: #1a3c6d;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #555;
+        }
+
+        .about {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(230,240,255,0.9));
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 2rem auto;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #25D366, #20b358);
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .whatsapp-btn img {
+            width: 45px;
+            height: 45px;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #1a3c6d 0%, #2e5cb8 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .home h2, .about h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Consultoría en Tecnología</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre Mí</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Soluciones Tecnológicas para tu Negocio</h2>
+            <p>Impulsamos tu éxito con estrategias digitales personalizadas y un enfoque centrado en tus necesidades.</p>
+            <a href="#home" class="cta-button">Conoce Nuestros Servicios</a>
+        </div>
+    </section>
+
+    <section id="home" class="section home">
+        <h2>Consultoría</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Transformación Digital Estratégica</h3>
+                <p>Te ayudamos a diseñar e implementar estrategias de digitalización que optimicen procesos, mejoren la experiencia del cliente y aumenten la competitividad de tu negocio.</p>
+            </div>
+            <div class="service-card">
+                <h3>Creación de FODA</h3>
+                <p>Realizamos análisis FODA (Fortalezas, Oportunidades, Debilidades, Amenazas) detallados para identificar áreas clave de mejora y oportunidades estratégicas para tu empresa.</p>
+            </div>
+            <div class="service-card">
+                <h3>Gestión de Proyectos Tecnológicos</h3>
+                <p>Coordinamos y supervisamos proyectos tecnológicos, asegurando entregas puntuales y alineadas con tus objetivos empresariales.</p>
+            </div>
+            <div class="service-card">
+                <h3>Consultoría en Cloud</h3>
+                <p>Asesoramos en la adopción de soluciones en la nube, optimizando costos y mejorando la escalabilidad y accesibilidad de tus operaciones.</p>
+            </div>
+            <div class="service-card">
+                <h3>Capacitación Tecnológica</h3>
+                <p>Ofrecemos talleres y programas de formación personalizados para que tu equipo adopte nuevas tecnologías con confianza y eficacia.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <h2>Sobre Mí</h2>
+        <div class="about-content">
+            <p>Soy un consultor tecnológico con más de 15 años de experiencia ayudando a empresas a navegar el panorama digital con confianza. Mi enfoque combina visión estratégica con un entendimiento profundo de las necesidades del negocio, permitiéndome ofrecer soluciones que no solo resuelven problemas, sino que impulsan el crecimiento sostenible.</p>
+            <p>Mi trayectoria incluye colaboraciones con empresas de diversos sectores, desde startups hasta corporaciones, ayudándolas a implementar tecnologías que optimizan procesos y generan valor. Estoy especializado en transformar ideas en estrategias prácticas, con un enfoque en la simplicidad y la efectividad.</p>
+            <p>Además de mi experiencia técnica, me apasiona trabajar de cerca con los equipos para fomentar una cultura de innovación. Creo firmemente que la tecnología debe estar al servicio de las personas, y mi misión es empoderar a las empresas para que alcancen su máximo potencial en un mundo cada vez más digital.</p>
+        </div>
+    </section>
+
+    <a href="https://wa.me/541128259919" class="whatsapp-btn" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <footer>
+        <p>© 2025 Consultoría en Tecnología. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation and CTA button
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in animation for sections
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
