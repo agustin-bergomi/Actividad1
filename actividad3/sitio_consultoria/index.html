@@ -16,19 +16,19 @@
         body {
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #e6f0fa 0%, #d0e1ff 100%);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
             overflow-x: hidden;
         }
 
         header {
-            background: linear-gradient(90deg, #1a3c6d 0%, #2e5cb8 100%);
+            background: linear-gradient(90deg, #1a1a1a 0%, #333333 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         .header-content {
@@ -53,7 +53,7 @@
         }
 
         nav a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
@@ -61,7 +61,7 @@
         }
 
         nav a:hover {
-            color: #ffd700;
+            color: #cccccc;
         }
 
         .hero {
@@ -70,7 +70,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, rgba(26,60,109,0.9), rgba(46,92,184,0.7)), url('https://images.unsplash.com/photo-1516321318423-ffd94a9d0f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(50,50,50,0.7)), url('https://images.unsplash.com/photo-1516321318423-ffd94a9d0f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -85,16 +85,18 @@
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1rem;
+            color: #ffffff;
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
+            color: #e0e0e0;
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #ffd700, #ffaa00);
-            color: #1a3c6d;
+            background: linear-gradient(45deg, #ffffff, #d0d0d0);
+            color: #1a1a1a;
             padding: 0.8rem 2rem;
             border-radius: 25px;
             text-decoration: none;
@@ -104,7 +106,7 @@
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         .section {
@@ -113,11 +115,11 @@
             margin: 0 auto;
         }
 
-        .home h2, .about h2 {
+        .home h2, .services h2, .about h2, .faq h2, .contact h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             text-align: center;
-            background: linear-gradient(to right, #1a3c6d, #2e5cb8);
+            background: linear-gradient(to right, #1a1a1a, #555555);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -130,21 +132,21 @@
         }
 
         .service-card {
-            background: white;
+            background: #ffffff;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.25);
         }
 
         .service-card h3 {
-            color: #1a3c6d;
+            color: #1a1a1a;
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
@@ -153,23 +155,37 @@
             color: #555;
         }
 
-        .about {
-            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(230,240,255,0.9));
-            border-radius: 15px;
-            padding: 3rem;
-            margin: 2rem auto;
-        }
-
-        .about-content {
+        .about-content, .faq-content, .contact-content {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about-content p {
+        .about-content p, .faq-content p, .contact-content p {
             font-size: 1.1rem;
             color: #444;
             margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .faq-item h3 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-content a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-content a:hover {
+            color: #555;
         }
 
         .whatsapp-btn {
@@ -177,7 +193,11 @@
             bottom: 30px;
             right: 30px;
             background: linear-gradient(45deg, #25D366, #20b358);
-            padding: 15px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -190,12 +210,12 @@
         }
 
         .whatsapp-btn img {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
         }
 
         footer {
-            background: linear-gradient(90deg, #1a3c6d 0%, #2e5cb8 100%);
+            background: linear-gradient(90deg, #1a1a1a 0%, #333333 100%);
             color: white;
             text-align: center;
             padding: 2rem;
@@ -204,6 +224,17 @@
 
         footer p {
             font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #cccccc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            color: #ffffff;
         }
 
         @media (max-width: 768px) {
@@ -230,8 +261,18 @@
                 padding: 3rem 1rem;
             }
 
-            .home h2, .about h2 {
+            .home h2, .services h2, .about h2, .faq h2, .contact h2 {
                 font-size: 1.8rem;
+            }
+
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-btn img {
+                width: 30px;
+                height: 30px;
             }
         }
     </style>
@@ -243,7 +284,10 @@
             <nav>
                 <ul>
                     <li><a href="#home">Inicio</a></li>
+                    <li><a href="#services">Servicios</a></li>
                     <li><a href="#about">Sobre Mí</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -253,7 +297,7 @@
         <div class="hero-content">
             <h2>Soluciones Tecnológicas para tu Negocio</h2>
             <p>Impulsamos tu éxito con estrategias digitales personalizadas y un enfoque centrado en tus necesidades.</p>
-            <a href="#home" class="cta-button">Conoce Nuestros Servicios</a>
+            <a href="#services" class="cta-button">Conoce Nuestros Servicios</a>
         </div>
     </section>
 
@@ -271,6 +315,24 @@
             <div class="service-card">
                 <h3>Gestión de Proyectos Tecnológicos</h3>
                 <p>Coordinamos y supervisamos proyectos tecnológicos, asegurando entregas puntuales y alineadas con tus objetivos empresariales.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section services">
+        <h2>Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Transformación Digital Estratégica</h3>
+                <p>Desarrollamos planes integrales para digitalizar tus operaciones, enfocándonos en la eficiencia, la experiencia del cliente y el crecimiento sostenible.</p>
+            </div>
+            <div class="service-card">
+                <h3>Creación de FODA</h3>
+                <p>Elaboramos análisis FODA personalizados para identificar fortalezas, debilidades, oportunidades y amenazas, proporcionando una base sólida para la toma de decisiones estratégicas.</p>
+            </div>
+            <div class="service-card">
+                <h3>Gestión de Proyectos Tecnológicos</h3>
+                <p>Supervisamos proyectos tecnológicos desde la planificación hasta la ejecución, garantizando resultados alineados con tus metas de negocio.</p>
             </div>
             <div class="service-card">
                 <h3>Consultoría en Cloud</h3>
@@ -292,12 +354,45 @@
         </div>
     </section>
 
+    <section id="faq" class="section faq">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-content">
+            <div class="faq-item">
+                <h3>¿Qué tipo de empresas pueden beneficiarse de tus servicios?</h3>
+                <p>Trabajo con empresas de todos los tamaños y sectores, desde startups hasta grandes corporaciones, que buscan optimizar sus procesos o adoptar tecnologías estratégicas.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Cómo funciona el análisis FODA?</h3>
+                <p>El análisis FODA implica una evaluación detallada de tu negocio para identificar fortalezas, debilidades, oportunidades y amenazas, lo que permite diseñar estrategias efectivas.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Ofreces servicios personalizados?</h3>
+                <p>Sí, todos mis servicios son adaptados a las necesidades específicas de cada cliente, asegurando soluciones que se alineen con sus objetivos.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Cuánto tiempo lleva implementar una estrategia de transformación digital?</h3>
+                <p>El tiempo varía según la complejidad del proyecto, pero trabajamos contigo para establecer plazos realistas y entregas puntuales.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2>Contacto</h2>
+        <div class="contact-content">
+            <p>¿Listo para llevar tu negocio al siguiente nivel? Contáctame para discutir tus necesidades y cómo puedo ayudarte.</p>
+            <p><strong>Teléfono:</strong> <a href="tel:+541128259919">+54 11 2825 9919</a></p>
+            <p><strong>Email:</strong> <a href="mailto:agustin.bergomi@gmail.com">agustin.bergomi@gmail.com</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/541128259919">Chatea conmigo</a></p>
+        </div>
+    </section>
+
     <a href="https://wa.me/541128259919" class="whatsapp-btn" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
     <footer>
         <p>© 2025 Consultoría en Tecnología. Todos los derechos reservados.</p>
+        <p><strong>Teléfono:</strong> <a href="tel:+541128259919">+54 11 2825 9919</a> | <strong>Email:</strong> <a href="mailto:agustin.bergomi@gmail.com">agustin.bergomi@gmail.com</a></p>
     </footer>
 
     <script>
