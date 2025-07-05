@@ -124,6 +124,14 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .home p, .services p, .about p, .faq p, .contact p {
+            font-size: 1.1rem;
+            color: #444;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -138,6 +146,7 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .service-card:hover {
@@ -161,10 +170,15 @@
             text-align: center;
         }
 
-        .about-content p, .faq-content p, .contact-content p {
-            font-size: 1.1rem;
-            color: #444;
-            margin-bottom: 1.5rem;
+        .linkedin-logo {
+            width: 40px;
+            height: 40px;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .linkedin-logo:hover {
+            transform: scale(1.1);
         }
 
         .faq-item {
@@ -274,6 +288,11 @@
                 width: 30px;
                 height: 30px;
             }
+
+            .linkedin-logo {
+                width: 30px;
+                height: 30px;
+            }
         }
     </style>
 </head>
@@ -302,45 +321,57 @@
     </section>
 
     <section id="home" class="section home">
-        <h2>Consultoría</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Transformación Digital Estratégica</h3>
-                <p>Te ayudamos a diseñar e implementar estrategias de digitalización que optimicen procesos, mejoren la experiencia del cliente y aumenten la competitividad de tu negocio.</p>
-            </div>
-            <div class="service-card">
-                <h3>Creación de FODA</h3>
-                <p>Realizamos análisis FODA (Fortalezas, Oportunidades, Debilidades, Amenazas) detallados para identificar áreas clave de mejora y oportunidades estratégicas para tu empresa.</p>
-            </div>
-            <div class="service-card">
-                <h3>Gestión de Proyectos Tecnológicos</h3>
-                <p>Coordinamos y supervisamos proyectos tecnológicos, asegurando entregas puntuales y alineadas con tus objetivos empresariales.</p>
-            </div>
-        </div>
+        <h2>Bienvenidos</h2>
+        <p>Soy Agustín Bergomi, consultor tecnológico con más de 10 años de experiencia. Ofrezco soluciones estratégicas para optimizar tus procesos y llevar tu negocio al siguiente nivel en un entorno digital.</p>
+        <p>Explora mis servicios y descubre cómo puedo ayudarte a alcanzar tus objetivos empresariales con un enfoque práctico y orientado a resultados.</p>
     </section>
 
     <section id="services" class="section services">
         <h2>Servicios</h2>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card" data-service="Consultoría Estratégica">
+                <h3>Consultoría Estratégica</h3>
+                <p>¿No sabes por dónde empezar? Te ofrecemos una consultoría integral para evaluar tus necesidades y diseñar un plan estratégico personalizado que impulse tu transformación digital.</p>
+            </div>
+            <div class="service-card" data-service="Transformación Digital Estratégica">
                 <h3>Transformación Digital Estratégica</h3>
                 <p>Desarrollamos planes integrales para digitalizar tus operaciones, enfocándonos en la eficiencia, la experiencia del cliente y el crecimiento sostenible.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-service="Creación de FODA">
                 <h3>Creación de FODA</h3>
                 <p>Elaboramos análisis FODA personalizados para identificar fortalezas, debilidades, oportunidades y amenazas, proporcionando una base sólida para la toma de decisiones estratégicas.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-service="Gestión de Proyectos Tecnológicos">
                 <h3>Gestión de Proyectos Tecnológicos</h3>
                 <p>Supervisamos proyectos tecnológicos desde la planificación hasta la ejecución, garantizando resultados alineados con tus metas de negocio.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-service="Consultoría en Cloud">
                 <h3>Consultoría en Cloud</h3>
                 <p>Asesoramos en la adopción de soluciones en la nube, optimizando costos y mejorando la escalabilidad y accesibilidad de tus operaciones.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-service="Capacitación Tecnológica">
                 <h3>Capacitación Tecnológica</h3>
                 <p>Ofrecemos talleres y programas de formación personalizados para que tu equipo adopte nuevas tecnologías con confianza y eficacia.</p>
+            </div>
+            <div class="service-card" data-service="Quality Assurance">
+                <h3>Quality Assurance</h3>
+                <p>Implementamos procesos de aseguramiento de calidad para garantizar que tus productos y servicios tecnológicos cumplan con los más altos estándares.</p>
+            </div>
+            <div class="service-card" data-service="Quality Control">
+                <h3>Quality Control</h3>
+                <p>Realizamos controles rigurosos para identificar y corregir defectos, asegurando la entrega de soluciones tecnológicas confiables y de alta calidad.</p>
+            </div>
+            <div class="service-card" data-service="UX/UI Assessment">
+                <h3>UX/UI Assessment</h3>
+                <p>Evaluamos la experiencia y la interfaz de usuario de tus productos digitales para optimizar la usabilidad y la satisfacción del cliente.</p>
+            </div>
+            <div class="service-card" data-service="Assessment de Usabilidad">
+                <h3>Assessment de Usabilidad</h3>
+                <p>Analizamos la usabilidad de tus plataformas digitales para garantizar una experiencia intuitiva y eficiente para tus usuarios.</p>
+            </div>
+            <div class="service-card" data-service="Assessment de Accesibilidad">
+                <h3>Assessment de Accesibilidad</h3>
+                <p>Evaluamos y mejoramos la accesibilidad de tus soluciones digitales para cumplir con estándares inclusivos y llegar a todos los usuarios.</p>
             </div>
         </div>
     </section>
@@ -348,9 +379,14 @@
     <section id="about" class="section about">
         <h2>Sobre Mí</h2>
         <div class="about-content">
-            <p>Soy un consultor tecnológico con más de 15 años de experiencia ayudando a empresas a navegar el panorama digital con confianza. Mi enfoque combina visión estratégica con un entendimiento profundo de las necesidades del negocio, permitiéndome ofrecer soluciones que no solo resuelven problemas, sino que impulsan el crecimiento sostenible.</p>
+            <p>Soy Agustín Bergomi, un consultor tecnológico con más de 10 años de experiencia ayudando a empresas a navegar el panorama digital con confianza. Mi enfoque combina visión estratégica con un entendimiento profundo de las necesidades del negocio, permitiéndome ofrecer soluciones que no solo resuelven problemas, sino que impulsan el crecimiento sostenible.</p>
             <p>Mi trayectoria incluye colaboraciones con empresas de diversos sectores, desde startups hasta corporaciones, ayudándolas a implementar tecnologías que optimizan procesos y generan valor. Estoy especializado en transformar ideas en estrategias prácticas, con un enfoque en la simplicidad y la efectividad.</p>
             <p>Además de mi experiencia técnica, me apasiona trabajar de cerca con los equipos para fomentar una cultura de innovación. Creo firmemente que la tecnología debe estar al servicio de las personas, y mi misión es empoderar a las empresas para que alcancen su máximo potencial en un mundo cada vez más digital.</p>
+            <a href="https://www.linkedin.com/in/49751892474/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" But the response有序
+
+System: LinkedIn" class="linkedin-logo">
+            </a>
         </div>
     </section>
 
@@ -406,6 +442,15 @@
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
+            });
+        });
+
+        // WhatsApp link for service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const serviceName = this.getAttribute('data-service');
+                const message = encodeURIComponent(`Hola, me interesa el servicio de ${serviceName}`);
+                window.open(`https://wa.me/541128259919?text=${message}`, '_blank');
             });
         });
 
