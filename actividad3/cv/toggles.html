@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Editar CV</title></head>
+<body>
+<h2>Mostrar/Ocultar secciones del CV</h2>
+<label><input type="checkbox" id="experiencia"> Experiencia</label><br>
+<label><input type="checkbox" id="cursos"> Cursos</label><br>
+<label><input type="checkbox" id="educacion"> Educación</label><br>
+<button onclick="guardar()">Guardar</button>
+
+<script>
+async function cargarConfig() {
+  const res = await fetch('backend.php');
+  const config = await res.json();
+  for (let key in config) {
+    document.getElementById(key).checked = config[key];
+  }
+}
+async function guardar() {
+  const config = {
+    experiencia: document.getElementById('experiencia').checked,
+    cursos: document.getElementById('cursos').checked,
+    educacion: document.getElementById('educacion').checked,
+  };
+  await fetch('backend.php', {
+    method: 'POST',
+    body: JSON.stringify(config),
+    headers: {'Content-Type': 'application/json'}
+  });
+  alert('Configuración guardada');
+}
+cargarConfig();
+</script>
+</body>
+</html>
