@@ -1,35 +1,134 @@
 <!DOCTYPE html>
-<html>
-<head><title>Editar CV</title></head>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CV - Agustín Bergomi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 4px;
+    }
+    .seccion {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .admin-panel {
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+    .admin-panel input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+    .admin-panel button {
+      padding: 8px 16px;
+    }
+    .admin-list {
+      margin-top: 10px;
+    }
+  </style>
+</head>
 <body>
-<h2>Mostrar/Ocultar secciones del CV</h2>
-<label><input type="checkbox" id="experiencia"> Experiencia</label><br>
-<label><input type="checkbox" id="cursos"> Cursos</label><br>
-<label><input type="checkbox" id="educacion"> Educación</label><br>
-<button onclick="guardar()">Guardar</button>
+  <h1>Agustín Bergomi</h1>
 
-<script>
-async function cargarConfig() {
-  const res = await fetch('backend.php');
-  const config = await res.json();
-  for (let key in config) {
-    document.getElementById(key).checked = config[key];
-  }
-}
-async function guardar() {
-  const config = {
-    experiencia: document.getElementById('experiencia').checked,
-    cursos: document.getElementById('cursos').checked,
-    educacion: document.getElementById('educacion').checked,
-  };
-  await fetch('backend.php', {
-    method: 'POST',
-    body: JSON.stringify(config),
-    headers: {'Content-Type': 'application/json'}
-  });
-  alert('Configuración guardada');
-}
-cargarConfig();
-</script>
+  <div class="admin-panel">
+    <h2>Agregar nueva sección</h2>
+    <input type="text" id="nuevaClave" placeholder="Identificador único (ej: proyectos)">
+    <input type="text" id="nuevoTitulo" placeholder="Título de la sección (ej: Proyectos)">
+    <input type="text" id="nuevoContenido" placeholder="Contenido resumido">
+    <button onclick="agregarSeccion()">Guardar</button>
+
+    <div class="admin-list" id="listaSecciones"></div>
+  </div>
+
+  <div id="experiencia" class="seccion" style="display:none;">
+    <h2>Experiencia</h2>
+    <h3>Consultor Tecnológico Freelance (May 2025 - Presente)</h3>
+    <p>Consultoría en tecnología, gestión de proyectos, QA, UX/UI, cloud y formación técnica.</p>
+
+    <h3>Quality Assurance en Globant (Feb 2021 - May 2025)</h3>
+    <p>Testing en apps móviles, reporte de bugs, análisis de fallos, validación de features y casos de prueba.</p>
+
+    <h3>Quality Assurance en Disney (May 2022 - Feb 2025)</h3>
+    <p>Tests en Android/iOS, seguimiento de bugs, regresión, análisis de crash, validación de releases.</p>
+
+    <h3>Desarrollador Web Freelance (2015 - 2021)</h3>
+    <p>Desarrollo y despliegue de sitios y apps web, arquitectura modular, soporte y documentación para clientes.</p>
+  </div>
+
+  <div id="educacion" class="seccion" style="display:none;">
+    <h2>Educación</h2>
+    <h3>UADE (2025 - 2028)</h3>
+    <p>Licenciatura en Gestión de Tecnología de la Información. Aprobadas: Arquitectura de Computadoras, Desarrollo Web, Algoritmos. En curso: Redes, Sistemas de Información.</p>
+  </div>
+
+  <div id="cursos" class="seccion" style="display:none;">
+    <h2>Certificaciones</h2>
+    <ul>
+      <li>Ethical Hacking: Introducción (LinkedIn, Jul 2025)</li>
+      <li>Ethical Hacking: Dispositivos Móviles (LinkedIn, Apr 2024)</li>
+    </ul>
+  </div>
+
+  <script>
+    async function cargar() {
+      const res = await fetch('backend.php');
+      const config = await res.json();
+      for (let key in config) {
+        const div = document.getElementById(key);
+        if (div) {
+          div.style.display = config[key] ? 'block' : 'none';
+        } else if (config[key] && window.localStorage.getItem(key)) {
+          const section = document.createElement('div');
+          section.className = 'seccion';
+          section.id = key;
+          section.innerHTML = '<h2>' + window.localStorage.getItem(key + '_titulo') + '</h2><p>' + window.localStorage.getItem(key + '_contenido') + '</p>';
+          document.body.appendChild(section);
+        }
+      }
+    }
+
+    async function agregarSeccion() {
+      const clave = document.getElementById('nuevaClave').value.trim();
+      const titulo = document.getElementById('nuevoTitulo').value.trim();
+      const contenido = document.getElementById('nuevoContenido').value.trim();
+
+      if (!clave || !titulo || !contenido) return alert('Completar todos los campos.');
+
+      // Guardar localmente (simula base)
+      localStorage.setItem(clave + '_titulo', titulo);
+      localStorage.setItem(clave + '_contenido', contenido);
+
+      // Leer config actual
+      const res = await fetch('backend.php');
+      const config = await res.json();
+      config[clave] = true;
+
+      // Guardar nueva config
+      await fetch('backend.php', {
+        method: 'POST',
+        body: JSON.stringify(config),
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      location.reload();
+    }
+
+    cargar();
+  </script>
 </body>
 </html>
